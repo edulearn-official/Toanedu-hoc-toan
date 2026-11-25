@@ -1341,18 +1341,9 @@
     <!-- Thư viện Firebase SDK cho HTML thuần -->
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
-    <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']]
-            },
-            startup: {
-                typeset: false
-            }
-        };
-    </script>
-    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
 </head>
 
 <body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
@@ -6570,6 +6561,17 @@
 
             row.appendChild(bubble);
             list.appendChild(row);
+            if (window.renderMathInElement) {
+                window.renderMathInElement(bubble, {
+                    delimiters: [
+                        { left: '$$', right: '$$', display: true },
+                        { left: '$', right: '$', display: false },
+                        { left: '\\(', right: '\\)', display: false },
+                        { left: '\\[', right: '\\]', display: true }
+                    ],
+                    throwOnError: false
+                });
+            }
             list.scrollTop = list.scrollHeight;
             return bubble;
         }
