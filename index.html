@@ -6478,46 +6478,70 @@
 
         function formatAIChatText(rawText) {
             let text = String(rawText || '').replace(/\r\n/g, '\n');
+            const slots = [];
+            const putSlot = (html) => {
+                const key = `@@SLOT_${slots.length}@@`;
+                slots.push(html);
+                return key;
+            };
 
-            // Đổi $$...$$ sang khung công thức dạng block span
+            // 1. Tách khối $$...$$ ra slot riêng trước khi escape HTML
             text = text.replace(/\$\$([\s\S]+?)\$\$/g, (_, expr) => {
-                const clean = expr.trim()
+                const cleanExpr = expr.trim()
                     .replace(/&/g, '&amp;')
                     .replace(/</g, '&lt;')
                     .replace(/>/g, '&gt;');
-                return `\n<span class="block my-1.5 px-2.5 py-1.5 rounded-lg bg-slate-100 font-mono text-xs text-indigo-950 overflow-x-auto">${clean}</span>\n`;
+                return putSlot(
+                    `<span class="block my-1.5 px-3 py-2 rounded-lg bg-slate-100 font-mono text-xs text-indigo-950 overflow-x-auto">${cleanExpr}</span>`
+                );
             });
 
+            // 2. Escape toàn bộ văn bản còn lại
             text = text
                 .replace(/&/g, '&amp;')
                 .replace(/</g, '&lt;')
                 .replace(/>/g, '&gt;');
 
+            // 3. Tách công thức ngắn $...$ ra slot riêng
             text = text.replace(/\$([^\s$][^$\n]*?[^\s$]|\S)\$/g, (_, expr) => {
-                return `<span class="font-semibold text-indigo-900 bg-indigo-50/80 px-1 rounded">${expr}</span>`;
+                return putSlot(
+                    `<span class="font-semibold text-indigo-900 bg-indigo-50/80 px-1 rounded">${expr}</span>`
+                );
             });
 
+            // 4. Xử lý từng dòng: kẻ ngang ---, tiêu đề ###, gạch đầu dòng * / -
             const lines = text.split('\n').map(line => {
                 const trimmed = line.trim();
                 if (/^-{3,}$/.test(trimmed)) {
-                    return '<hr class="my-2 border-slate-200">';
+                    return putSlot('<hr class="my-2 border-slate-200">');
                 }
                 const headingMatch = line.match(/^#{1,4}\s+(.+)$/);
                 if (headingMatch) {
-                    return `<span class="block font-bold text-slate-900 mt-2 mb-1">${headingMatch[1]}</span>`;
+                    return putSlot(`<span class="block font-bold text-slate-900 mt-2 mb-1">${headingMatch[1]}</span>`);
+                }
+                const bulletMatch = line.match(/^\s*[-*]\s+(.+)$/);
+                if (bulletMatch) {
+                    return `• ${bulletMatch[1]}`;
                 }
                 return line;
             });
 
-            return lines.join('\n')
+            // 5. Định dạng in đậm, in nghiêng, số mũ đơn giản và xuống dòng
+            let html = lines.join('\n')
                 .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
                 .replace(/(?<!\*)\*(?!\*)([^*\n]+?)(?<!\*)\*(?!\*)/g, '<em>$1</em>')
+                .replace(/([A-Za-z0-9\)])\^([A-Za-z0-9+-]+)/g, '$1<sup>$2</sup>')
                 .replace(/\n{2,}/g, '<br><br>')
-                .replace(/\n/g, '<br>')
+                .replace(/\n/g, '<br>');
+
+            // 6. Trả lại các slot HTML thật và dọn <br> thừa quanh khối block
+            html = html.replace(/@@SLOT_(\d+)@@/g, (_, idx) => slots[Number(idx)] || '');
+            html = html
                 .replace(/(<br>)+(<span class="block|<hr)/g, '$2')
                 .replace(/(<\/span>|<hr[^>]*>)(<br>)+/g, '$1');
-        }
 
+            return html;
+        }
         function appendAIChatMessage(text, sender, isStatus = false) {
             const list = document.getElementById('aiChatMessages');
             if (!list) return null;
