@@ -6515,18 +6515,7 @@
             const question = input?.value.trim();
             if (!question || !send) return;
 
-            let apiKey = "";
-            if (!GEMINI_PROXY_URL) {
-                apiKey = getGeminiKey();
-                if (!apiKey || !apiKey.startsWith('AIza')) {
-                    setGeminiKey();
-                    apiKey = getGeminiKey();
-                    if (!apiKey || !apiKey.startsWith('AIza')) {
-                        appendAIChatMessage('⚠️ Em cần nhập đúng Gemini API Key (bắt đầu bằng AIzaSy...) qua nút chìa khóa 🔑!', 'assistant');
-                        return;
-                    }
-                }
-            }
+            const apiKey = "";
 
             appendAIChatMessage(question, 'user');
             input.value = '';
@@ -7753,50 +7742,44 @@
             const sendBtn = document.getElementById('probAiSendBtn');
             if (sendBtn) sendBtn.disabled = true;
 
-            const apiKey = getGeminiKey();
-            if (apiKey && apiKey.startsWith('AIza')) {
-                const pendingEl = appendProbAIChatBubble('ai', 'Đang phân tích dữ liệu mô phỏng xác suất...', false);
-                try {
-                    const sysPrompt = 'Bạn là Trợ lý AI chuyên về Tổ hợp & Xác suất THPT Việt Nam (bao gồm Xác suất cổ điển, Xác suất có điều kiện, Công thức nhân/cộng xác suất, Luật số lớn). Hãy dựa trên dữ liệu mô phỏng thực nghiệm hiện tại của học sinh để giải thích ngắn gọn, dễ hiểu, trình bày rõ các bước và gợi mở tư duy.';
-                    const contents = [
-                        ...probAiHistory.slice(-6).map(m => ({ role: m.role === 'user' ? 'user' : 'model', parts: [{ text: m.content }] })),
-                        {
-                            role: 'user', parts: [{
-                                text: `[Dữ liệu phòng thí nghiệm hiện tại: ${ctx.promptContext}]
-Câu hỏi của học sinh: ${userQuestion}`
-                            }]
-                        }
-                    ];
-                    const endpoint = GEMINI_PROXY_URL
-                        ? GEMINI_PROXY_URL
-                        : `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${encodeURIComponent(apiKey)}`;
+            const apiKey = "";
+            const pendingEl = appendProbAIChatBubble('ai', 'Đang phân tích dữ liệu mô phỏng xác suất...', false);
 
-                    const response = await fetch(endpoint, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ systemInstruction: { parts: [{ text: sysPrompt }] }, contents })
-                    });
-                    const data = await response.json();
-                    if (!response.ok) throw new Error(data.error?.message || `Lỗi API (${response.status})`);
-                    const reply = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
-                    pendingEl?.remove();
-                    if (reply) {
-                        appendProbAIChatBubble('ai', reply, false);
-                        probAiHistory.push({ role: 'user', content: userQuestion }, { role: 'assistant', content: reply });
-                    } else {
-                        appendProbAIChatBubble('ai', generateLocalProbFallbackReply(), true);
+            try {
+                const sysPrompt = 'Bạn là Trợ lý AI chuyên về Tổ hợp & Xác suất THPT Việt Nam (bao gồm Xác suất cổ điển, Xác suất có điều kiện, Công thức nhân/cộng xác suất, Luật số lớn). Hãy dựa trên dữ liệu mô phỏng thực nghiệm hiện tại của học sinh để giải thích ngắn gọn, dễ hiểu, trình bày rõ các bước và gợi mở tư duy.';
+                const contents = [
+                    ...probAiHistory.slice(-6).map(m => ({ role: m.role === 'user' ? 'user' : 'model', parts: [{ text: m.content }] })),
+                    {
+                        role: 'user', parts: [{
+                            text: `[Dữ liệu phòng thí nghiệm hiện tại: ${ctx.promptContext}]
+Câu hỏi của học sinh: ${userQuestion}`
+                        }]
                     }
-                } catch (err) {
-                    pendingEl?.remove();
+                ];
+                const endpoint = GEMINI_PROXY_URL
+                    ? GEMINI_PROXY_URL
+                    : `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${encodeURIComponent(apiKey)}`;
+
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ systemInstruction: { parts: [{ text: sysPrompt }] }, contents })
+                });
+                const data = await response.json();
+                if (!response.ok) throw new Error(data.error?.message || `Lỗi API (${response.status})`);
+                const reply = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
+                pendingEl?.remove();
+                if (reply) {
+                    appendProbAIChatBubble('ai', reply, false);
+                    probAiHistory.push({ role: 'user', content: userQuestion }, { role: 'assistant', content: reply });
+                } else {
                     appendProbAIChatBubble('ai', generateLocalProbFallbackReply(), true);
-                } finally {
-                    if (sendBtn) sendBtn.disabled = false;
                 }
-            } else {
-                setTimeout(() => {
-                    appendProbAIChatBubble('ai', generateLocalProbFallbackReply(), true);
-                    if (sendBtn) sendBtn.disabled = false;
-                }, 280);
+            } catch (err) {
+                pendingEl?.remove();
+                appendProbAIChatBubble('ai', generateLocalProbFallbackReply(), true);
+            } finally {
+                if (sendBtn) sendBtn.disabled = false;
             }
         }
 
