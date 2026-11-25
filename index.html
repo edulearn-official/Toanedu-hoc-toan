@@ -6479,12 +6479,13 @@
         function formatAIChatText(rawText) {
             let text = String(rawText || '').replace(/\r\n/g, '\n');
 
+            // Đổi $$...$$ sang khung công thức dạng block span
             text = text.replace(/\$\$([\s\S]+?)\$\$/g, (_, expr) => {
                 const clean = expr.trim()
                     .replace(/&/g, '&amp;')
                     .replace(/</g, '&lt;')
                     .replace(/>/g, '&gt;');
-                return `\n<div class="my-1.5 px-2.5 py-1.5 rounded-lg bg-slate-100 font-mono text-xs text-indigo-950 overflow-x-auto">${clean}</div>\n`;
+                return `\n<span class="block my-1.5 px-2.5 py-1.5 rounded-lg bg-slate-100 font-mono text-xs text-indigo-950 overflow-x-auto">${clean}</span>\n`;
             });
 
             text = text
@@ -6503,24 +6504,18 @@
                 }
                 const headingMatch = line.match(/^#{1,4}\s+(.+)$/);
                 if (headingMatch) {
-                    return `<div class="font-bold text-slate-900 mt-2 mb-1">${headingMatch[1]}</div>`;
+                    return `<span class="block font-bold text-slate-900 mt-2 mb-1">${headingMatch[1]}</span>`;
                 }
                 return line;
             });
 
-            text = lines.join('\n');
-
-            text = text
+            return lines.join('\n')
                 .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
                 .replace(/(?<!\*)\*(?!\*)([^*\n]+?)(?<!\*)\*(?!\*)/g, '<em>$1</em>')
                 .replace(/\n{2,}/g, '<br><br>')
-                .replace(/\n/g, '<br>');
-
-            text = text
-                .replace(/<br>\s*(<div|<hr)/g, '$1')
-                .replace(/(<\/div>|<hr[^>]*>)\s*<br>/g, '$1');
-
-            return text;
+                .replace(/\n/g, '<br>')
+                .replace(/(<br>)+(<span class="block|<hr)/g, '$2')
+                .replace(/(<\/span>|<hr[^>]*>)(<br>)+/g, '$1');
         }
 
         function appendAIChatMessage(text, sender, isStatus = false) {
@@ -6542,7 +6537,7 @@
             list.scrollTop = list.scrollHeight;
             return bubble;
         }
-        
+
         async function sendAIChatMessage(event) {
             event?.preventDefault();
             const input = document.getElementById('aiChatInput');
