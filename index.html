@@ -6477,15 +6477,50 @@
         }
 
         function formatAIChatText(rawText) {
-            const escaped = String(rawText || '')
+            let text = String(rawText || '').replace(/\r\n/g, '\n');
+
+            text = text.replace(/\$\$([\s\S]+?)\$\$/g, (_, expr) => {
+                const clean = expr.trim()
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;');
+                return `\n<div class="my-1.5 px-2.5 py-1.5 rounded-lg bg-slate-100 font-mono text-xs text-indigo-950 overflow-x-auto">${clean}</div>\n`;
+            });
+
+            text = text
                 .replace(/&/g, '&amp;')
                 .replace(/</g, '&lt;')
                 .replace(/>/g, '&gt;');
 
-            return escaped
+            text = text.replace(/\$([^\s$][^$\n]*?[^\s$]|\S)\$/g, (_, expr) => {
+                return `<span class="font-semibold text-indigo-900 bg-indigo-50/80 px-1 rounded">${expr}</span>`;
+            });
+
+            const lines = text.split('\n').map(line => {
+                const trimmed = line.trim();
+                if (/^-{3,}$/.test(trimmed)) {
+                    return '<hr class="my-2 border-slate-200">';
+                }
+                const headingMatch = line.match(/^#{1,4}\s+(.+)$/);
+                if (headingMatch) {
+                    return `<div class="font-bold text-slate-900 mt-2 mb-1">${headingMatch[1]}</div>`;
+                }
+                return line;
+            });
+
+            text = lines.join('\n');
+
+            text = text
                 .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-                .replace(/\*(.+?)\*/g, '<em>$1</em>')
+                .replace(/(?<!\*)\*(?!\*)([^*\n]+?)(?<!\*)\*(?!\*)/g, '<em>$1</em>')
+                .replace(/\n{2,}/g, '<br><br>')
                 .replace(/\n/g, '<br>');
+
+            text = text
+                .replace(/<br>\s*(<div|<hr)/g, '$1')
+                .replace(/(<\/div>|<hr[^>]*>)\s*<br>/g, '$1');
+
+            return text;
         }
 
         function appendAIChatMessage(text, sender, isStatus = false) {
