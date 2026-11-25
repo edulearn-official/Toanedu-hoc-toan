@@ -6476,6 +6476,18 @@
             if (shouldOpen) setTimeout(() => document.getElementById('aiChatInput')?.focus(), 50);
         }
 
+        function formatAIChatText(rawText) {
+            const escaped = String(rawText || '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;');
+
+            return escaped
+                .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.+?)\*/g, '<em>$1</em>')
+                .replace(/\n/g, '<br>');
+        }
+
         function appendAIChatMessage(text, sender, isStatus = false) {
             const list = document.getElementById('aiChatMessages');
             if (!list) return null;
@@ -6483,7 +6495,13 @@
             row.className = `flex ${sender === 'user' ? 'justify-end' : 'justify-start'}`;
             const bubble = document.createElement('div');
             bubble.className = `chat-message max-w-[90%] rounded-2xl px-4 py-3 text-sm shadow-sm ${sender === 'user' ? 'bg-indigo-600 text-white rounded-tr-md' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-md'} ${isStatus ? 'italic text-slate-500' : ''}`;
-            bubble.textContent = text;
+
+            if (sender === 'user' || isStatus) {
+                bubble.textContent = text;
+            } else {
+                bubble.innerHTML = formatAIChatText(text);
+            }
+
             row.appendChild(bubble);
             list.appendChild(row);
             list.scrollTop = list.scrollHeight;
