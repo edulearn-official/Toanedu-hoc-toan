@@ -1349,8 +1349,7 @@
 <body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
 
     <!-- Toast Thông Báo -->
-    <div id="toast"
-        class="fixed top-20 right-5 z-[99] transform translate-x-full opacity-0 transition-all duration-300 bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 border border-slate-700 pointer-events-none">
+    <div id="toast" class="fixed top-20 right-5 z-[99] transform translate-x-full opacity-0 transition-all duration-300 bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 border border-slate-700 pointer-events-none">
         <i id="toastIcon" class="fa-solid fa-circle-check text-green-400 text-lg"></i>
         <span id="toastMessage" class="text-sm font-medium">Thông báo</span>
     </div>
@@ -1587,8 +1586,7 @@
         <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 edu-header-inner">
             <a href="#" onclick="showPage('homePage'); return false;" class="edu-brand">
                 <span class="edu-brand-mark">EL</span>
-                <span class="edu-brand-name text-slate-900 font-extrabold text-[23px] tracking-tight">Edu<span
-                        class="text-blue-600">Learn</span></span>
+                <span class="edu-brand-name text-slate-900 font-extrabold text-[23px] tracking-tight">Edu<span class="text-blue-600">Learn</span></span>
             </a>
 
             <nav class="edu-nav" aria-label="Điều hướng chính">
@@ -1596,8 +1594,7 @@
                     <i class="fa-solid fa-house"></i><span>Trang chủ</span>
                 </button>
                 <details class="edu-nav-group">
-                    <summary class="edu-nav-summary"><i class="fa-solid fa-book-open"></i><span>Khóa học</span><i
-                            class="fa-solid fa-chevron-down !text-[10px]"></i></summary>
+                    <summary class="edu-nav-summary"><i class="fa-solid fa-book-open"></i><span>Khóa học</span><i class="fa-solid fa-chevron-down !text-[10px]"></i></summary>
                     <div class="edu-nav-menu">
                         <button type="button" onclick="openCoursePage('math10')"><i class="fa-solid fa-book"></i>Toán
                             lớp 10</button>
@@ -1611,19 +1608,15 @@
                     <i class="fa-solid fa-comments"></i><span>Cộng đồng</span>
                 </button>
                 <details class="edu-nav-group">
-                    <summary class="edu-nav-summary"><i class="fa-solid fa-chart-column"></i><span>Góc học tập</span><i
-                            class="fa-solid fa-chevron-down !text-[10px]"></i></summary>
+                    <summary class="edu-nav-summary"><i class="fa-solid fa-chart-column"></i><span>Góc học tập</span><i class="fa-solid fa-chevron-down !text-[10px]"></i></summary>
                     <div class="edu-nav-menu">
                         <button type="button" onclick="openGraphModal('2d')"><i class="fa-solid fa-chart-line"></i>Vẽ đồ
                             thị</button>
                         <button type="button" onclick="openProbabilityPage()"><i class="fa-solid fa-dice"></i>Xác suất
                             3D</button>
-                        <button type="button" onclick="openExamRoomPage()"><i
-                                class="fa-solid fa-shield-halved"></i>Phòng kiểm tra</button>
-                        <button type="button" onclick="toggleCasioWidget(true)"><i
-                                class="fa-solid fa-calculator"></i>Máy tính Casio</button>
-                        <button type="button" onclick="toggleEduWhiteboard()"><i
-                                class="fa-solid fa-chalkboard"></i>Whiteboard</button>
+                        <button type="button" onclick="openExamRoomPage()"><i class="fa-solid fa-shield-halved"></i>Phòng kiểm tra</button>
+                        <button type="button" onclick="toggleCasioWidget(true)"><i class="fa-solid fa-calculator"></i>Máy tính Casio</button>
+                        <button type="button" onclick="toggleEduWhiteboard()"><i class="fa-solid fa-chalkboard"></i>Whiteboard</button>
                         <button type="button" onclick="openGraphModal('3d')"><i class="fa-solid fa-cubes"></i>Hình
                             học</button>
                     </div>
@@ -1632,25 +1625,19 @@
 
             <div class="edu-header-actions">
                 <div id="authButtons" class="flex items-center gap-1">
-                    <button type="button" onclick="openLoginModal()"
-                        class="edu-auth-login hover:text-blue-600 transition">Đăng nhập</button>
-                    <button type="button" onclick="openRegisterModal()"
-                        class="edu-auth-register hover:bg-blue-700 transition">Đăng ký</button>
+                    <button type="button" onclick="openLoginModal()" class="edu-auth-login hover:text-blue-600 transition">Đăng nhập</button>
+                    <button type="button" onclick="openRegisterModal()" class="edu-auth-register hover:bg-blue-700 transition">Đăng ký</button>
                 </div>
                 <div id="userInfo" class="hidden items-center gap-2.5 border-l border-slate-200 pl-3">
-                    <button id="userAvatar" type="button" onclick="openAccountModal()" aria-label="Mở quản lý tài khoản"
-                        title="Quản lý tài khoản"
-                        class="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm shadow-sm overflow-hidden ring-2 ring-transparent hover:ring-blue-300 transition">U</button>
+                    <button id="userAvatar" type="button" onclick="openAccountModal()" aria-label="Mở quản lý tài khoản" title="Quản lý tài khoản" class="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm shadow-sm overflow-hidden ring-2 ring-transparent hover:ring-blue-300 transition">U</button>
                     <span id="userNameDisplay" class="text-sm font-semibold text-slate-800 hidden lg:inline">Học
                         Viên</span>
-                    <button type="button" onclick="handleLogout()" title="Đăng xuất"
-                        class="p-2 text-slate-400 hover:text-red-600 transition rounded-lg hover:bg-slate-100">
+                    <button type="button" onclick="handleLogout()" title="Đăng xuất" class="p-2 text-slate-400 hover:text-red-600 transition rounded-lg hover:bg-slate-100">
                         <i class="fa-solid fa-right-from-bracket"></i>
                     </button>
                 </div>
                 <details class="edu-mobile-menu">
-                    <summary
-                        class="w-10 h-10 rounded-xl bg-slate-100 text-slate-600 grid place-items-center cursor-pointer list-none">
+                    <summary class="w-10 h-10 rounded-xl bg-slate-100 text-slate-600 grid place-items-center cursor-pointer list-none">
                         <i class="fa-solid fa-bars"></i>
                     </summary>
                     <div class="edu-nav-menu">
@@ -1668,10 +1655,8 @@
                             thị</button>
                         <button type="button" onclick="openProbabilityPage()"><i class="fa-solid fa-dice"></i>Xác suất
                             3D</button>
-                        <button type="button" onclick="openExamRoomPage()"><i
-                                class="fa-solid fa-shield-halved"></i>Phòng kiểm tra</button>
-                        <button type="button" onclick="toggleCasioWidget(true)"><i
-                                class="fa-solid fa-calculator"></i>Máy tính Casio</button>
+                        <button type="button" onclick="openExamRoomPage()"><i class="fa-solid fa-shield-halved"></i>Phòng kiểm tra</button>
+                        <button type="button" onclick="toggleCasioWidget(true)"><i class="fa-solid fa-calculator"></i>Máy tính Casio</button>
                     </div>
                 </details>
             </div>
@@ -1685,8 +1670,7 @@
 
         <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
             <div class="lg:col-span-7 space-y-6">
-                <span
-                    class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold border border-blue-100">
+                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold border border-blue-100">
                     <i class="fa-solid fa-graduation-cap"></i> Hệ thống học tập số 4.0
                 </span>
 
@@ -1701,20 +1685,16 @@
                 </p>
 
                 <div class="flex flex-wrap items-center gap-4 pt-2">
-                    <a href="#courses"
-                        class="px-7 py-3.5 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 shadow-lg shadow-blue-500/20 transition">
+                    <a href="#courses" class="px-7 py-3.5 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 shadow-lg shadow-blue-500/20 transition">
                         Khám phá khóa học
                     </a>
-                    <button type="button" onclick="openGlobalChatRoom()"
-                        class="px-7 py-3.5 bg-emerald-600 text-white font-semibold rounded-xl hover:bg-emerald-700 shadow-lg shadow-emerald-500/20 transition flex items-center gap-2">
+                    <button type="button" onclick="openGlobalChatRoom()" class="px-7 py-3.5 bg-emerald-600 text-white font-semibold rounded-xl hover:bg-emerald-700 shadow-lg shadow-emerald-500/20 transition flex items-center gap-2">
                         <i class="fa-solid fa-comments"></i> Vào phòng chat học viên
                     </button>
-                    <button type="button" onclick="openProbabilityPage()"
-                        class="px-7 py-3.5 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 shadow-lg shadow-indigo-500/20 transition flex items-center gap-2">
+                    <button type="button" onclick="openProbabilityPage()" class="px-7 py-3.5 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 shadow-lg shadow-indigo-500/20 transition flex items-center gap-2">
                         <i class="fa-solid fa-dice"></i> Mô phỏng Xác suất 3D
                     </button>
-                    <button type="button" onclick="openExamRoomPage()"
-                        class="px-7 py-3.5 bg-rose-600 text-white font-semibold rounded-xl hover:bg-rose-700 shadow-lg shadow-rose-500/20 transition flex items-center gap-2">
+                    <button type="button" onclick="openExamRoomPage()" class="px-7 py-3.5 bg-rose-600 text-white font-semibold rounded-xl hover:bg-rose-700 shadow-lg shadow-rose-500/20 transition flex items-center gap-2">
                         <i class="fa-solid fa-shield-halved"></i> Phòng Kiểm Tra
                     </button>
                 </div>
@@ -1736,8 +1716,7 @@
                                 <span id="percentMath12" class="text-blue-600 font-bold">0%</span>
                             </div>
                             <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
-                                <div id="barMath12" class="bg-blue-600 h-full rounded-full transition-all duration-500"
-                                    style="width: 0%"></div>
+                                <div id="barMath12" class="bg-blue-600 h-full rounded-full transition-all duration-500" style="width: 0%"></div>
                             </div>
                         </div>
 
@@ -1747,8 +1726,7 @@
                                 <span id="percentMath11" class="text-cyan-600 font-bold">0%</span>
                             </div>
                             <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
-                                <div id="barMath11" class="bg-cyan-600 h-full rounded-full transition-all duration-500"
-                                    style="width: 0%"></div>
+                                <div id="barMath11" class="bg-cyan-600 h-full rounded-full transition-all duration-500" style="width: 0%"></div>
                             </div>
                         </div>
 
@@ -1758,17 +1736,13 @@
                                 <span id="percentMath10" class="text-indigo-600 font-bold">0%</span>
                             </div>
                             <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
-                                <div id="barMath10"
-                                    class="bg-indigo-600 h-full rounded-full transition-all duration-500"
-                                    style="width: 0%"></div>
+                                <div id="barMath10" class="bg-indigo-600 h-full rounded-full transition-all duration-500" style="width: 0%"></div>
                             </div>
                         </div>
                     </div>
 
-                    <div
-                        class="pt-4 border-t border-slate-100 flex items-center gap-3 text-xs sm:text-sm text-slate-600 bg-slate-50 p-3.5 rounded-2xl">
-                        <div
-                            class="w-9 h-9 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold shrink-0">
+                    <div class="pt-4 border-t border-slate-100 flex items-center gap-3 text-xs sm:text-sm text-slate-600 bg-slate-50 p-3.5 rounded-2xl">
+                        <div class="w-9 h-9 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold shrink-0">
                             <i class="fa-solid fa-user-graduate"></i>
                         </div>
                         <div id="welcomeUserName">
@@ -1782,84 +1756,66 @@
         <section class="mb-14">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
                 <!-- Khung Daily Sprint -->
-                <div
-                    class="lg:col-span-7 bg-white rounded-3xl border border-slate-200 shadow-sm p-6 flex flex-col justify-between space-y-4">
+                <div class="lg:col-span-7 bg-white rounded-3xl border border-slate-200 shadow-sm p-6 flex flex-col justify-between space-y-4">
                     <div class="space-y-3">
                         <div class="flex items-center justify-between gap-2 flex-wrap">
                             <span class="text-sm font-extrabold text-slate-900 flex items-center gap-1.5">
                                 <i class="fa-solid fa-bolt text-amber-500"></i> Daily Sprint – 5 phút
                             </span>
                             <div class="flex items-center gap-3">
-                                <button id="sprintAddQuestionBtn" type="button" onclick="toggleSprintAddForm()"
-                                    class="hidden text-xs font-bold text-emerald-600 hover:text-emerald-800 transition flex items-center gap-1">
+                                <button id="sprintAddQuestionBtn" type="button" onclick="toggleSprintAddForm()" class="hidden text-xs font-bold text-emerald-600 hover:text-emerald-800 transition flex items-center gap-1">
                                     <i class="fa-solid fa-plus"></i> Thêm câu hỏi
                                 </button>
-                                <button type="button" onclick="nextDailySprintQuestion()"
-                                    class="text-xs font-bold text-blue-600 hover:text-blue-800 transition">
+                                <button type="button" onclick="nextDailySprintQuestion()" class="text-xs font-bold text-blue-600 hover:text-blue-800 transition">
                                     Câu tiếp theo
                                 </button>
                             </div>
                         </div>
-                        <form id="sprintAddQuestionForm" onsubmit="addCustomSprintQuestion(event)"
-                            class="hidden p-4 rounded-2xl border border-slate-200 bg-slate-50 space-y-2.5 text-xs">
+                        <form id="sprintAddQuestionForm" onsubmit="addCustomSprintQuestion(event)" class="hidden p-4 rounded-2xl border border-slate-200 bg-slate-50 space-y-2.5 text-xs">
                             <div class="font-bold text-slate-800">Thêm câu hỏi mới vào Daily Sprint</div>
-                            <input id="sprintNewQ" type="text" required placeholder="Nội dung câu hỏi..."
-                                class="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white text-slate-800 focus:outline-none focus:border-blue-500">
+                            <input id="sprintNewQ" type="text" required placeholder="Nội dung câu hỏi..." class="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white text-slate-800 focus:outline-none focus:border-blue-500">
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                                <input id="sprintOptA" type="text" required placeholder="Đáp án A"
-                                    class="px-3 py-1.5 rounded-xl border border-slate-300 bg-white text-slate-800 focus:outline-none focus:border-blue-500">
-                                <input id="sprintOptB" type="text" required placeholder="Đáp án B"
-                                    class="px-3 py-1.5 rounded-xl border border-slate-300 bg-white text-slate-800 focus:outline-none focus:border-blue-500">
-                                <input id="sprintOptC" type="text" required placeholder="Đáp án C"
-                                    class="px-3 py-1.5 rounded-xl border border-slate-300 bg-white text-slate-800 focus:outline-none focus:border-blue-500">
-                                <input id="sprintOptD" type="text" required placeholder="Đáp án D"
-                                    class="px-3 py-1.5 rounded-xl border border-slate-300 bg-white text-slate-800 focus:outline-none focus:border-blue-500">
+                                <input id="sprintOptA" type="text" required placeholder="Đáp án A" class="px-3 py-1.5 rounded-xl border border-slate-300 bg-white text-slate-800 focus:outline-none focus:border-blue-500">
+                                <input id="sprintOptB" type="text" required placeholder="Đáp án B" class="px-3 py-1.5 rounded-xl border border-slate-300 bg-white text-slate-800 focus:outline-none focus:border-blue-500">
+                                <input id="sprintOptC" type="text" required placeholder="Đáp án C" class="px-3 py-1.5 rounded-xl border border-slate-300 bg-white text-slate-800 focus:outline-none focus:border-blue-500">
+                                <input id="sprintOptD" type="text" required placeholder="Đáp án D" class="px-3 py-1.5 rounded-xl border border-slate-300 bg-white text-slate-800 focus:outline-none focus:border-blue-500">
                             </div>
                             <div class="flex flex-col sm:flex-row gap-2">
-                                <select id="sprintCorrectOpt"
-                                    class="px-3 py-1.5 rounded-xl border border-slate-300 bg-white text-slate-800 font-semibold focus:outline-none focus:border-blue-500">
+                                <select id="sprintCorrectOpt" class="px-3 py-1.5 rounded-xl border border-slate-300 bg-white text-slate-800 font-semibold focus:outline-none focus:border-blue-500">
                                     <option value="A">Đáp án đúng: A</option>
                                     <option value="B">Đáp án đúng: B</option>
                                     <option value="C">Đáp án đúng: C</option>
                                     <option value="D">Đáp án đúng: D</option>
                                 </select>
-                                <input id="sprintExplanation" type="text"
-                                    placeholder="Giải thích ngắn gọn (tuỳ chọn)..."
-                                    class="flex-1 px-3 py-1.5 rounded-xl border border-slate-300 bg-white text-slate-800 focus:outline-none focus:border-blue-500">
+                                <input id="sprintExplanation" type="text" placeholder="Giải thích ngắn gọn (tuỳ chọn)..." class="flex-1 px-3 py-1.5 rounded-xl border border-slate-300 bg-white text-slate-800 focus:outline-none focus:border-blue-500">
                             </div>
                             <div class="flex items-center justify-end gap-2 pt-1">
-                                <button type="button" onclick="toggleSprintAddForm()"
-                                    class="px-3 py-1.5 rounded-xl border border-slate-300 bg-white text-slate-600 font-semibold hover:bg-slate-100">
+                                <button type="button" onclick="toggleSprintAddForm()" class="px-3 py-1.5 rounded-xl border border-slate-300 bg-white text-slate-600 font-semibold hover:bg-slate-100">
                                     Huỷ
                                 </button>
-                                <button type="submit"
-                                    class="px-3.5 py-1.5 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-700">
+                                <button type="submit" class="px-3.5 py-1.5 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-700">
                                     Lưu câu hỏi
                                 </button>
                             </div>
                         </form>
                         <p id="sprintMetaText" class="text-xs text-slate-400">Đang tải thử thách...</p>
-                        <p id="sprintQuestionText"
-                            class="text-sm sm:text-base font-bold text-slate-900 leading-relaxed"></p>
+                        <p id="sprintQuestionText" class="text-sm sm:text-base font-bold text-slate-900 leading-relaxed"></p>
                     </div>
 
                     <div id="sprintOptionsGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm">
                     </div>
 
-                    <div id="sprintFeedbackBox"
-                        class="hidden p-3.5 rounded-2xl border text-xs leading-relaxed space-y-1"></div>
+                    <div id="sprintFeedbackBox" class="hidden p-3.5 rounded-2xl border text-xs leading-relaxed space-y-1"></div>
                 </div>
 
                 <!-- Khung Sổ tay lỗi sai -->
-                <div
-                    class="lg:col-span-5 bg-white rounded-3xl border border-slate-200 shadow-sm p-6 flex flex-col justify-between space-y-4">
+                <div class="lg:col-span-5 bg-white rounded-3xl border border-slate-200 shadow-sm p-6 flex flex-col justify-between space-y-4">
                     <div class="space-y-2">
                         <div class="flex items-center justify-between gap-2">
                             <span class="text-sm font-extrabold text-slate-900 flex items-center gap-1.5">
                                 <i class="fa-solid fa-book-bookmark text-rose-500"></i> Sổ tay lỗi sai
                             </span>
-                            <span id="mistakeCountBadge"
-                                class="px-2.5 py-0.5 rounded-full bg-rose-50 text-rose-600 border border-rose-200 text-xs font-extrabold">
+                            <span id="mistakeCountBadge" class="px-2.5 py-0.5 rounded-full bg-rose-50 text-rose-600 border border-rose-200 text-xs font-extrabold">
                                 0 câu
                             </span>
                         </div>
@@ -1881,8 +1837,7 @@
             <div class="bg-white rounded-3xl border border-amber-100 shadow-sm p-6 sm:p-8 space-y-5">
                 <div class="flex items-center justify-between flex-wrap gap-3">
                     <div>
-                        <span
-                            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-700 text-xs font-bold border border-amber-200">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-700 text-xs font-bold border border-amber-200">
                             <i class="fa-solid fa-trophy"></i> HONOR ROLL
                         </span>
                         <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 mt-2">Bảng Vinh Danh Học Viên Tiêu
@@ -1897,14 +1852,12 @@
 
         <!-- Bộ đếm ngược sự kiện / mục tiêu học tập -->
         <section class="mb-14">
-            <div
-                class="bg-white rounded-[2.5rem] border border-blue-100 shadow-sm px-5 sm:px-10 py-7 sm:py-8 text-center">
+            <div class="bg-white rounded-[2.5rem] border border-blue-100 shadow-sm px-5 sm:px-10 py-7 sm:py-8 text-center">
                 <p class="text-sm sm:text-lg md:text-xl font-semibold text-blue-900 leading-relaxed uppercase">
                     HỌC TẬP MỖI NGÀY – CHINH PHỤC MỤC TIÊU CỦA BẠN
                 </p>
                 <p class="text-xs text-slate-500 mt-2">Cùng đếm ngược đến ngày quan trọng tiếp theo</p>
-                <div class="flex justify-center items-center flex-wrap gap-2 sm:gap-3 mt-5" id="countdownDisplay"
-                    aria-live="polite">
+                <div class="flex justify-center items-center flex-wrap gap-2 sm:gap-3 mt-5" id="countdownDisplay" aria-live="polite">
                     <div class="countdown-unit"><strong id="countDays">--</strong><span>ngày</span></div>
                     <div class="countdown-unit"><strong id="countHours">--</strong><span>giờ</span></div>
                     <div class="countdown-unit"><strong id="countMinutes">--</strong><span>phút</span></div>
@@ -1912,10 +1865,8 @@
                 </div>
                 <div class="mt-5 flex flex-wrap justify-center items-center gap-2 text-xs sm:text-sm text-slate-500">
                     <label for="countdownTarget" class="font-semibold">Ngày mục tiêu:</label>
-                    <input id="countdownTarget" type="datetime-local"
-                        class="px-3 py-2 rounded-xl border border-blue-100 bg-blue-50 text-slate-700 outline-none focus:border-blue-400">
-                    <button type="button" onclick="saveCountdownTarget()"
-                        class="px-4 py-2 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition">
+                    <input id="countdownTarget" type="datetime-local" class="px-3 py-2 rounded-xl border border-blue-100 bg-blue-50 text-slate-700 outline-none focus:border-blue-400">
+                    <button type="button" onclick="saveCountdownTarget()" class="px-4 py-2 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition">
                         <i class="fa-solid fa-floppy-disk mr-1"></i> Lưu ngày
                     </button>
                 </div>
@@ -1928,13 +1879,10 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Thẻ Toán 12 -->
-                <div onclick="openCoursePage('math12')"
-                    class="cursor-pointer bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition flex flex-col group">
+                <div onclick="openCoursePage('math12')" class="cursor-pointer bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition flex flex-col group">
                     <div class="h-44 bg-blue-600 flex items-center justify-center text-white relative">
-                        <i
-                            class="fa-solid fa-square-root-variable text-5xl group-hover:scale-110 transition duration-300"></i>
-                        <span
-                            class="absolute top-4 left-4 bg-white/90 text-blue-700 text-xs font-bold px-3 py-1 rounded-full">Toán
+                        <i class="fa-solid fa-square-root-variable text-5xl group-hover:scale-110 transition duration-300"></i>
+                        <span class="absolute top-4 left-4 bg-white/90 text-blue-700 text-xs font-bold px-3 py-1 rounded-full">Toán
                             Lớp 12</span>
                     </div>
                     <div class="p-6 space-y-3 flex-grow flex flex-col justify-between">
@@ -1946,20 +1894,17 @@
                         </div>
                         <div class="pt-4 border-t border-slate-100 flex items-center justify-between mt-4">
                             <span class="text-lg font-extrabold text-blue-600">Miễn phí</span>
-                            <span
-                                class="px-4 py-2 bg-blue-50 text-blue-600 rounded-xl text-sm font-semibold group-hover:bg-blue-600 group-hover:text-white transition">Vào
+                            <span class="px-4 py-2 bg-blue-50 text-blue-600 rounded-xl text-sm font-semibold group-hover:bg-blue-600 group-hover:text-white transition">Vào
                                 học ngay →</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Thẻ Toán 11 -->
-                <div onclick="openCoursePage('math11')"
-                    class="cursor-pointer bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition flex flex-col group">
+                <div onclick="openCoursePage('math11')" class="cursor-pointer bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition flex flex-col group">
                     <div class="h-44 bg-cyan-600 flex items-center justify-center text-white relative">
                         <i class="fa-solid fa-shapes text-5xl group-hover:scale-110 transition duration-300"></i>
-                        <span
-                            class="absolute top-4 left-4 bg-white/90 text-cyan-700 text-xs font-bold px-3 py-1 rounded-full">Toán
+                        <span class="absolute top-4 left-4 bg-white/90 text-cyan-700 text-xs font-bold px-3 py-1 rounded-full">Toán
                             Lớp 11</span>
                     </div>
                     <div class="p-6 space-y-3 flex-grow flex flex-col justify-between">
@@ -1971,20 +1916,17 @@
                         </div>
                         <div class="pt-4 border-t border-slate-100 flex items-center justify-between mt-4">
                             <span class="text-lg font-extrabold text-blue-600">Miễn phí</span>
-                            <span
-                                class="px-4 py-2 bg-cyan-50 text-cyan-600 rounded-xl text-sm font-semibold group-hover:bg-cyan-600 group-hover:text-white transition">Vào
+                            <span class="px-4 py-2 bg-cyan-50 text-cyan-600 rounded-xl text-sm font-semibold group-hover:bg-cyan-600 group-hover:text-white transition">Vào
                                 học ngay →</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Thẻ Toán 10 -->
-                <div onclick="openCoursePage('math10')"
-                    class="cursor-pointer bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition flex flex-col group">
+                <div onclick="openCoursePage('math10')" class="cursor-pointer bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition flex flex-col group">
                     <div class="h-44 bg-indigo-600 flex items-center justify-center text-white relative">
                         <i class="fa-solid fa-calculator text-5xl group-hover:scale-110 transition duration-300"></i>
-                        <span
-                            class="absolute top-4 left-4 bg-white/90 text-indigo-700 text-xs font-bold px-3 py-1 rounded-full">Toán
+                        <span class="absolute top-4 left-4 bg-white/90 text-indigo-700 text-xs font-bold px-3 py-1 rounded-full">Toán
                             Lớp 10</span>
                     </div>
                     <div class="p-6 space-y-3 flex-grow flex flex-col justify-between">
@@ -1996,8 +1938,7 @@
                         </div>
                         <div class="pt-4 border-t border-slate-100 flex items-center justify-between mt-4">
                             <span class="text-lg font-extrabold text-blue-600">Miễn phí</span>
-                            <span
-                                class="px-4 py-2 bg-indigo-50 text-indigo-600 rounded-xl text-sm font-semibold group-hover:bg-indigo-600 group-hover:text-white transition">Vào
+                            <span class="px-4 py-2 bg-indigo-50 text-indigo-600 rounded-xl text-sm font-semibold group-hover:bg-indigo-600 group-hover:text-white transition">Vào
                                 học ngay →</span>
                         </div>
                     </div>
@@ -2012,18 +1953,15 @@
          ========================================================= -->
     <main id="lessonPage" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
 
-        <button type="button" onclick="showPage('homePage')"
-            class="mb-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 transition">
+        <button type="button" onclick="showPage('homePage')" class="mb-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 transition">
             <i class="fa-solid fa-arrow-left"></i> Quay lại trang chủ
         </button>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
             <div class="lg:col-span-8 space-y-6">
-                <div
-                    class="bg-black rounded-3xl overflow-hidden shadow-2xl aspect-video flex items-center justify-center relative">
+                <div class="bg-black rounded-3xl overflow-hidden shadow-2xl aspect-video flex items-center justify-center relative">
                     <video id="videoPlayer" class="w-full h-full hidden" controls></video>
-                    <iframe id="youtubePlayer" class="w-full h-full hidden" frameborder="0" allowfullscreen
-                        allow="autoplay"></iframe>
+                    <iframe id="youtubePlayer" class="w-full h-full hidden" frameborder="0" allowfullscreen allow="autoplay"></iframe>
                     <div id="videoPlaceholder" class="text-slate-400 text-center p-6 space-y-2">
                         <i class="fa-solid fa-circle-play text-6xl opacity-50"></i>
                         <p class="text-sm font-medium">Chưa có bài giảng được chọn. Vui lòng chọn danh sách bên phải.
@@ -2032,31 +1970,26 @@
                 </div>
 
                 <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-1">
-                    <span id="courseBadge"
-                        class="text-xs font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">Khóa học</span>
+                    <span id="courseBadge" class="text-xs font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">Khóa học</span>
                     <h1 id="currentVideoTitle" class="text-2xl font-extrabold text-slate-900 pt-2">Vui lòng chọn bài
                         giảng</h1>
                 </div>
 
-                <div id="addLessonSection"
-                    class="hidden bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                <div id="addLessonSection" class="hidden bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
                     <h3 class="font-bold text-slate-900 text-lg flex items-center gap-2">
                         <i class="fa-solid fa-plus-circle text-blue-600"></i> Thêm bài giảng từ Link YouTube / Online
                     </h3>
                     <div class="space-y-3">
                         <div>
                             <label class="block text-xs font-semibold text-slate-700 mb-1">Tên bài giảng</label>
-                            <input type="text" id="uploadTitle" placeholder="Ví dụ: Bài 2 - Cực trị của hàm số"
-                                class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-blue-500 focus:bg-white transition">
+                            <input type="text" id="uploadTitle" placeholder="Ví dụ: Bài 2 - Cực trị của hàm số" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-blue-500 focus:bg-white transition">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold text-slate-700 mb-1">Đường link video (YouTube
                                 hoặc link MP4)</label>
-                            <input type="url" id="videoUrlInput" placeholder="https://www.youtube.com/watch?v=..."
-                                class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-blue-500 focus:bg-white transition">
+                            <input type="url" id="videoUrlInput" placeholder="https://www.youtube.com/watch?v=..." class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-blue-500 focus:bg-white transition">
                         </div>
-                        <button type="button" onclick="handleUploadVideo()"
-                            class="w-full py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition shadow-lg shadow-blue-500/20 text-sm">
+                        <button type="button" onclick="handleUploadVideo()" class="w-full py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition shadow-lg shadow-blue-500/20 text-sm">
                             Thêm bài giảng &amp; Phát ngay
                         </button>
                     </div>
@@ -2064,11 +1997,9 @@
 
                 <div id="quizContainer" class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-6">
                     <div class="flex items-center justify-between flex-wrap gap-4 border-b pb-4">
-                        <h3 class="font-bold text-slate-900 text-lg"><i
-                                class="fa-solid fa-file-pen text-blue-600 mr-2"></i> Luyện tập trắc nghiệm (Có bài giải
+                        <h3 class="font-bold text-slate-900 text-lg"><i class="fa-solid fa-file-pen text-blue-600 mr-2"></i> Luyện tập trắc nghiệm (Có bài giải
                             chi tiết)</h3>
-                        <button type="button" onclick="toggleCasioWidget(true)"
-                            class="px-3.5 py-1.5 rounded-xl bg-indigo-50 text-indigo-700 hover:bg-indigo-100 text-xs font-bold transition flex items-center gap-1.5">
+                        <button type="button" onclick="toggleCasioWidget(true)" class="px-3.5 py-1.5 rounded-xl bg-indigo-50 text-indigo-700 hover:bg-indigo-100 text-xs font-bold transition flex items-center gap-1.5">
                             <i class="fa-solid fa-calculator"></i> Mở Casio tính nhanh
                         </button>
                     </div>
@@ -2076,24 +2007,20 @@
                     <div id="teacherSection" class="hidden p-4 bg-purple-50 rounded-xl border border-purple-200">
                         <h3 class="text-sm font-bold text-purple-900 mb-2">Giáo viên — quản lý trắc nghiệm của bài đang
                             mở</h3>
-                        <button type="button" onclick="openCreateQuizModal()"
-                            class="px-4 py-2 bg-purple-600 text-white rounded-xl text-sm font-semibold hover:bg-purple-700 transition">
+                        <button type="button" onclick="openCreateQuizModal()" class="px-4 py-2 bg-purple-600 text-white rounded-xl text-sm font-semibold hover:bg-purple-700 transition">
                             + Thêm câu hỏi trắc nghiệm
                         </button>
                     </div>
 
-                    <div id="quizSummaryBanner"
-                        class="hidden p-4 rounded-2xl border flex items-center justify-between flex-wrap gap-3">
+                    <div id="quizSummaryBanner" class="hidden p-4 rounded-2xl border flex items-center justify-between flex-wrap gap-3">
                         <div class="flex items-center gap-3">
-                            <div id="summaryBannerIcon"
-                                class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-lg"></div>
+                            <div id="summaryBannerIcon" class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-lg"></div>
                             <div>
                                 <p id="summaryBannerTitle" class="font-bold text-sm"></p>
                                 <p id="summaryBannerSub" class="text-xs opacity-80"></p>
                             </div>
                         </div>
-                        <button type="button" onclick="resetQuizAttempt()"
-                            class="px-3.5 py-2 rounded-xl bg-white border border-slate-300 hover:bg-slate-100 text-slate-700 text-xs font-bold transition">
+                        <button type="button" onclick="resetQuizAttempt()" class="px-3.5 py-2 rounded-xl bg-white border border-slate-300 hover:bg-slate-100 text-slate-700 text-xs font-bold transition">
                             <i class="fa-solid fa-rotate-right mr-1"></i> Làm lại bài
                         </button>
                     </div>
@@ -2103,8 +2030,7 @@
                     </div>
 
                     <div id="submitQuizSection" class="hidden">
-                        <button id="submitQuizBtn" type="button" onclick="submitQuizAnswers()"
-                            class="w-full py-3.5 bg-purple-600 text-white rounded-xl font-bold hover:bg-purple-700 transition shadow-md">
+                        <button id="submitQuizBtn" type="button" onclick="submitQuizAnswers()" class="w-full py-3.5 bg-purple-600 text-white rounded-xl font-bold hover:bg-purple-700 transition shadow-md">
                             Nộp bài &amp; Xem bài giải chi tiết
                         </button>
                     </div>
@@ -2113,17 +2039,14 @@
 
             <div class="lg:col-span-4 space-y-6">
                 <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-                    <h3
-                        class="font-bold text-slate-900 text-lg flex items-center justify-between border-b border-slate-100 pb-3">
+                    <h3 class="font-bold text-slate-900 text-lg flex items-center justify-between border-b border-slate-100 pb-3">
                         <span><i class="fa-solid fa-list-check text-blue-600 mr-2"></i> Danh sách bài học</span>
                     </h3>
                     <div id="playlist" class="space-y-2 max-h-[260px] overflow-y-auto pr-1"></div>
                 </div>
 
-                <div
-                    class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col h-[420px]">
-                    <div
-                        class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-4 py-3 flex items-center justify-between">
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col h-[420px]">
+                    <div class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-4 py-3 flex items-center justify-between">
                         <div class="flex items-center gap-2.5">
                             <i class="fa-solid fa-comments text-lg"></i>
                             <div>
@@ -2135,21 +2058,14 @@
                         <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
                     </div>
 
-                    <div id="classChatMessages"
-                        class="chat-scroll flex-1 overflow-y-auto p-3 space-y-2.5 bg-slate-50 text-xs">
+                    <div id="classChatMessages" class="chat-scroll flex-1 overflow-y-auto p-3 space-y-2.5 bg-slate-50 text-xs">
                         <div class="text-center py-4 text-slate-400">Đang tải tin nhắn lớp học...</div>
                     </div>
 
-                    <form id="classChatForm" class="p-2.5 border-t border-slate-200 bg-white"
-                        onsubmit="sendClassChatMessage(event)">
-                        <div
-                            class="flex items-end gap-2 rounded-xl border border-slate-200 bg-slate-50 p-1.5 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-100">
-                            <textarea id="classChatInput" rows="1" maxlength="500"
-                                placeholder="Hỏi bài hoặc trả lời bạn bè..."
-                                class="flex-1 resize-none bg-transparent px-2 py-1 text-xs outline-none max-h-20"
-                                required></textarea>
-                            <button type="submit"
-                                class="w-9 h-9 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition flex items-center justify-center shrink-0">
+                    <form id="classChatForm" class="p-2.5 border-t border-slate-200 bg-white" onsubmit="sendClassChatMessage(event)">
+                        <div class="flex items-end gap-2 rounded-xl border border-slate-200 bg-slate-50 p-1.5 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-100">
+                            <textarea id="classChatInput" rows="1" maxlength="500" placeholder="Hỏi bài hoặc trả lời bạn bè..." class="flex-1 resize-none bg-transparent px-2 py-1 text-xs outline-none max-h-20" required></textarea>
+                            <button type="submit" class="w-9 h-9 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition flex items-center justify-center shrink-0">
                                 <i class="fa-solid fa-paper-plane text-xs"></i>
                             </button>
                         </div>
@@ -2163,14 +2079,12 @@
          [VIEW 3]: PHÒNG CHAT CHUNG TOÀN SERVER (GLOBAL CHAT PAGE)
          ========================================================= -->
     <main id="chatPage" class="hidden max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
-        <button type="button" onclick="showPage('homePage')"
-            class="mb-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 transition">
+        <button type="button" onclick="showPage('homePage')" class="mb-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 transition">
             <i class="fa-solid fa-arrow-left"></i> Quay lại trang chủ
         </button>
 
         <div class="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden flex flex-col h-[75vh]">
-            <div
-                class="bg-gradient-to-r from-emerald-600 to-teal-700 text-white px-6 py-4 flex items-center justify-between">
+            <div class="bg-gradient-to-r from-emerald-600 to-teal-700 text-white px-6 py-4 flex items-center justify-between">
                 <div class="flex items-center gap-3">
                     <div class="w-11 h-11 rounded-2xl bg-white/15 flex items-center justify-center text-xl">
                         <i class="fa-solid fa-comments"></i>
@@ -2191,16 +2105,10 @@
                 <div class="text-center py-6 text-slate-400 text-sm">Đang tải tin nhắn phòng chat chung...</div>
             </div>
 
-            <form id="globalChatForm" class="p-4 border-t border-slate-200 bg-white"
-                onsubmit="sendGlobalChatMessage(event)">
-                <div
-                    class="flex items-end gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-2.5 focus-within:border-emerald-500 focus-within:ring-2 focus-within:ring-emerald-100">
-                    <textarea id="globalChatInput" rows="1" maxlength="1000"
-                        placeholder="Nhập tin nhắn giao lưu chung..."
-                        class="flex-1 resize-none bg-transparent px-2 py-1.5 text-sm outline-none max-h-28"
-                        required></textarea>
-                    <button type="submit"
-                        class="px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition shadow-md text-sm flex items-center gap-2 shrink-0">
+            <form id="globalChatForm" class="p-4 border-t border-slate-200 bg-white" onsubmit="sendGlobalChatMessage(event)">
+                <div class="flex items-end gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-2.5 focus-within:border-emerald-500 focus-within:ring-2 focus-within:ring-emerald-100">
+                    <textarea id="globalChatInput" rows="1" maxlength="1000" placeholder="Nhập tin nhắn giao lưu chung..." class="flex-1 resize-none bg-transparent px-2 py-1.5 text-sm outline-none max-h-28" required></textarea>
+                    <button type="submit" class="px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition shadow-md text-sm flex items-center gap-2 shrink-0">
                         <span>Gửi</span>
                         <i class="fa-solid fa-paper-plane text-xs"></i>
                     </button>
@@ -2214,8 +2122,7 @@
          ========================================================= -->
     <main id="probabilityPage" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
         <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
-            <button type="button" onclick="showPage('homePage')"
-                class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 transition">
+            <button type="button" onclick="showPage('homePage')" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 transition">
                 <i class="fa-solid fa-arrow-left"></i> Quay lại trang chủ
             </button>
             <div class="flex items-center gap-2 text-xs text-slate-500">
@@ -2227,26 +2134,21 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
             <!-- CỘT TRÁI: KHUNG MÔ PHỎNG XÁC SUẤT 3D -->
-            <section id="widget-prob"
-                class="lg:col-span-7 bg-white rounded-3xl shadow-md border border-slate-200 overflow-hidden">
-                <div
-                    class="px-5 py-3.5 bg-slate-50 border-b border-slate-200 flex flex-wrap items-center justify-between gap-2">
+            <section id="widget-prob" class="lg:col-span-7 bg-white rounded-3xl shadow-md border border-slate-200 overflow-hidden">
+                <div class="px-5 py-3.5 bg-slate-50 border-b border-slate-200 flex flex-wrap items-center justify-between gap-2">
                     <div class="flex items-center gap-2">
                         <span class="text-lg">🎲</span>
                         <h2 class="font-bold text-sm sm:text-base text-slate-800">Mô phỏng Xác suất 3D</h2>
                     </div>
 
                     <div class="inline-flex bg-slate-200/80 p-0.5 rounded-xl">
-                        <button id="tab-dice" type="button" onclick="switchProbTab('dice')"
-                            class="px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-blue-600 shadow-2xs transition-all cursor-pointer">
+                        <button id="tab-dice" type="button" onclick="switchProbTab('dice')" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-blue-600 shadow-2xs transition-all cursor-pointer">
                             Xúc xắc
                         </button>
-                        <button id="tab-coin" type="button" onclick="switchProbTab('coin')"
-                            class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition-all cursor-pointer">
+                        <button id="tab-coin" type="button" onclick="switchProbTab('coin')" class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition-all cursor-pointer">
                             Đồng xu
                         </button>
-                        <button id="tab-card" type="button" onclick="switchProbTab('card')"
-                            class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition-all cursor-pointer">
+                        <button id="tab-card" type="button" onclick="switchProbTab('card')" class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition-all cursor-pointer">
                             Bài 52 lá
                         </button>
                     </div>
@@ -2257,34 +2159,22 @@
                     <div class="flex items-center justify-between mb-3">
                         <span class="text-xs text-slate-500">Chạm viên xúc xắc hoặc bấm nút để tung</span>
                         <div class="inline-flex bg-slate-100 p-0.5 rounded-lg border border-slate-200">
-                            <button id="btnMode1" type="button" onclick="setDiceCount(1)"
-                                class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-blue-600 text-white cursor-pointer">1
+                            <button id="btnMode1" type="button" onclick="setDiceCount(1)" class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-blue-600 text-white cursor-pointer">1
                                 Viên</button>
-                            <button id="btnMode2" type="button" onclick="setDiceCount(2)"
-                                class="px-2.5 py-1 rounded-md text-[11px] font-bold text-slate-600 cursor-pointer">2
+                            <button id="btnMode2" type="button" onclick="setDiceCount(2)" class="px-2.5 py-1 rounded-md text-[11px] font-bold text-slate-600 cursor-pointer">2
                                 Viên</button>
                         </div>
                     </div>
 
-                    <div
-                        class="dice-stage flex items-center justify-center gap-10 py-5 bg-slate-50/70 rounded-2xl border border-slate-100 min-h-[155px]">
+                    <div class="dice-stage flex items-center justify-center gap-10 py-5 bg-slate-50/70 rounded-2xl border border-slate-100 min-h-[155px]">
                         <div class="flex flex-col items-center gap-3">
                             <div id="cube1" class="cube" onclick="rollDice()">
                                 <div class="face face-1"><span class="pip pip-red pos-mc"></span></div>
-                                <div class="face face-2"><span class="pip pos-tr"></span><span
-                                        class="pip pos-bl"></span></div>
-                                <div class="face face-3"><span class="pip pos-tr"></span><span
-                                        class="pip pos-mc"></span><span class="pip pos-bl"></span></div>
-                                <div class="face face-4"><span class="pip pos-tl"></span><span
-                                        class="pip pos-tr"></span><span class="pip pos-bl"></span><span
-                                        class="pip pos-br"></span></div>
-                                <div class="face face-5"><span class="pip pos-tl"></span><span
-                                        class="pip pos-tr"></span><span class="pip pos-mc"></span><span
-                                        class="pip pos-bl"></span><span class="pip pos-br"></span></div>
-                                <div class="face face-6"><span class="pip pos-tl"></span><span
-                                        class="pip pos-tr"></span><span class="pip pos-ml"></span><span
-                                        class="pip pos-mr"></span><span class="pip pos-bl"></span><span
-                                        class="pip pos-br"></span></div>
+                                <div class="face face-2"><span class="pip pos-tr"></span><span class="pip pos-bl"></span></div>
+                                <div class="face face-3"><span class="pip pos-tr"></span><span class="pip pos-mc"></span><span class="pip pos-bl"></span></div>
+                                <div class="face face-4"><span class="pip pos-tl"></span><span class="pip pos-tr"></span><span class="pip pos-bl"></span><span class="pip pos-br"></span></div>
+                                <div class="face face-5"><span class="pip pos-tl"></span><span class="pip pos-tr"></span><span class="pip pos-mc"></span><span class="pip pos-bl"></span><span class="pip pos-br"></span></div>
+                                <div class="face face-6"><span class="pip pos-tl"></span><span class="pip pos-tr"></span><span class="pip pos-ml"></span><span class="pip pos-mr"></span><span class="pip pos-bl"></span><span class="pip pos-br"></span></div>
                             </div>
                             <div id="shadow1" class="dice-shadow"></div>
                         </div>
@@ -2292,42 +2182,29 @@
                         <div id="dice2Wrapper" class="hidden flex-col items-center gap-3">
                             <div id="cube2" class="cube" onclick="rollDice()">
                                 <div class="face face-1"><span class="pip pip-red pos-mc"></span></div>
-                                <div class="face face-2"><span class="pip pos-tr"></span><span
-                                        class="pip pos-bl"></span></div>
-                                <div class="face face-3"><span class="pip pos-tr"></span><span
-                                        class="pip pos-mc"></span><span class="pip pos-bl"></span></div>
-                                <div class="face face-4"><span class="pip pos-tl"></span><span
-                                        class="pip pos-tr"></span><span class="pip pos-bl"></span><span
-                                        class="pip pos-br"></span></div>
-                                <div class="face face-5"><span class="pip pos-tl"></span><span
-                                        class="pip pos-tr"></span><span class="pip pos-mc"></span><span
-                                        class="pip pos-bl"></span><span class="pip pos-br"></span></div>
-                                <div class="face face-6"><span class="pip pos-tl"></span><span
-                                        class="pip pos-tr"></span><span class="pip pos-ml"></span><span
-                                        class="pip pos-mr"></span><span class="pip pos-bl"></span><span
-                                        class="pip pos-br"></span></div>
+                                <div class="face face-2"><span class="pip pos-tr"></span><span class="pip pos-bl"></span></div>
+                                <div class="face face-3"><span class="pip pos-tr"></span><span class="pip pos-mc"></span><span class="pip pos-bl"></span></div>
+                                <div class="face face-4"><span class="pip pos-tl"></span><span class="pip pos-tr"></span><span class="pip pos-bl"></span><span class="pip pos-br"></span></div>
+                                <div class="face face-5"><span class="pip pos-tl"></span><span class="pip pos-tr"></span><span class="pip pos-mc"></span><span class="pip pos-bl"></span><span class="pip pos-br"></span></div>
+                                <div class="face face-6"><span class="pip pos-tl"></span><span class="pip pos-tr"></span><span class="pip pos-ml"></span><span class="pip pos-mr"></span><span class="pip pos-bl"></span><span class="pip pos-br"></span></div>
                             </div>
                             <div id="shadow2" class="dice-shadow"></div>
                         </div>
                     </div>
 
-                    <div
-                        class="mt-3.5 flex flex-wrap items-center justify-between gap-2 bg-slate-100 px-3.5 py-2.5 rounded-xl">
+                    <div class="mt-3.5 flex flex-wrap items-center justify-between gap-2 bg-slate-100 px-3.5 py-2.5 rounded-xl">
                         <div class="text-xs font-medium text-slate-600">
                             Kết quả: <span id="resultDisplay" class="text-sm font-extrabold text-blue-600 ml-1">Mặt
                                 1</span>
                         </div>
                         <div class="flex items-center gap-2">
-                            <button id="rollBtn" type="button" onclick="rollDice()"
-                                class="px-4 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-xs cursor-pointer">
+                            <button id="rollBtn" type="button" onclick="rollDice()" class="px-4 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-xs cursor-pointer">
                                 Tung 3D
                             </button>
-                            <button type="button" onclick="rollDiceBulk(50)"
-                                class="px-2.5 py-1.5 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 text-xs font-bold cursor-pointer">
+                            <button type="button" onclick="rollDiceBulk(50)" class="px-2.5 py-1.5 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 text-xs font-bold cursor-pointer">
                                 +50 lần
                             </button>
-                            <button type="button" onclick="resetDiceStats()"
-                                class="px-2.5 py-1.5 rounded-lg bg-white hover:bg-slate-200 text-slate-600 border border-slate-200 text-xs font-semibold cursor-pointer">
+                            <button type="button" onclick="resetDiceStats()" class="px-2.5 py-1.5 rounded-lg bg-white hover:bg-slate-200 text-slate-600 border border-slate-200 text-xs font-semibold cursor-pointer">
                                 Reset
                             </button>
                         </div>
@@ -2336,8 +2213,7 @@
                     <div class="mt-3.5 overflow-x-auto rounded-xl border border-slate-200">
                         <table class="w-full text-left border-collapse text-xs">
                             <thead>
-                                <tr
-                                    class="bg-slate-50 border-b border-slate-200 text-[11px] font-bold uppercase text-slate-500">
+                                <tr class="bg-slate-50 border-b border-slate-200 text-[11px] font-bold uppercase text-slate-500">
                                     <th class="py-2 px-3">Mặt</th>
                                     <th class="py-2 px-3 text-right">Số lần (<span id="totalRollsDisplay">0</span>)</th>
                                     <th class="py-2 px-3 text-right">Thực nghiệm</th>
@@ -2355,55 +2231,44 @@
                     <div class="flex items-center justify-between mb-3">
                         <span class="text-xs text-slate-500">N: Ngửa (Vàng) • S: Sấp (Bạc)</span>
                         <div class="inline-flex bg-slate-100 p-0.5 rounded-lg border border-slate-200">
-                            <button id="btnCoinMode1" type="button" onclick="setCoinCount(1)"
-                                class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-amber-500 text-white cursor-pointer">1
+                            <button id="btnCoinMode1" type="button" onclick="setCoinCount(1)" class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-amber-500 text-white cursor-pointer">1
                                 Xu</button>
-                            <button id="btnCoinMode2" type="button" onclick="setCoinCount(2)"
-                                class="px-2.5 py-1 rounded-md text-[11px] font-bold text-slate-600 cursor-pointer">2
+                            <button id="btnCoinMode2" type="button" onclick="setCoinCount(2)" class="px-2.5 py-1 rounded-md text-[11px] font-bold text-slate-600 cursor-pointer">2
                                 Xu</button>
                         </div>
                     </div>
 
-                    <div
-                        class="coin-stage flex items-center justify-center gap-10 py-5 bg-slate-50/70 rounded-2xl border border-slate-100 min-h-[155px]">
+                    <div class="coin-stage flex items-center justify-center gap-10 py-5 bg-slate-50/70 rounded-2xl border border-slate-100 min-h-[155px]">
                         <div class="flex flex-col items-center gap-3">
                             <div id="coin1" class="coin" onclick="flipCoin()">
-                                <div class="coin-face coin-heads"><span class="text-2xl font-black">N</span><span
-                                        class="text-[10px] font-bold">NGỬA</span></div>
-                                <div class="coin-face coin-tails"><span class="text-2xl font-black">S</span><span
-                                        class="text-[10px] font-bold">SẤP</span></div>
+                                <div class="coin-face coin-heads"><span class="text-2xl font-black">N</span><span class="text-[10px] font-bold">NGỬA</span></div>
+                                <div class="coin-face coin-tails"><span class="text-2xl font-black">S</span><span class="text-[10px] font-bold">SẤP</span></div>
                             </div>
                             <div id="coinShadow1" class="dice-shadow"></div>
                         </div>
 
                         <div id="coin2Wrapper" class="hidden flex-col items-center gap-3">
                             <div id="coin2" class="coin" onclick="flipCoin()">
-                                <div class="coin-face coin-heads"><span class="text-2xl font-black">N</span><span
-                                        class="text-[10px] font-bold">NGỬA</span></div>
-                                <div class="coin-face coin-tails"><span class="text-2xl font-black">S</span><span
-                                        class="text-[10px] font-bold">SẤP</span></div>
+                                <div class="coin-face coin-heads"><span class="text-2xl font-black">N</span><span class="text-[10px] font-bold">NGỬA</span></div>
+                                <div class="coin-face coin-tails"><span class="text-2xl font-black">S</span><span class="text-[10px] font-bold">SẤP</span></div>
                             </div>
                             <div id="coinShadow2" class="dice-shadow"></div>
                         </div>
                     </div>
 
-                    <div
-                        class="mt-3.5 flex flex-wrap items-center justify-between gap-2 bg-slate-100 px-3.5 py-2.5 rounded-xl">
+                    <div class="mt-3.5 flex flex-wrap items-center justify-between gap-2 bg-slate-100 px-3.5 py-2.5 rounded-xl">
                         <div class="text-xs font-medium text-slate-600">
                             Kết quả: <span id="coinResultDisplay" class="text-sm font-extrabold text-amber-600 ml-1">Sẵn
                                 sàng</span>
                         </div>
                         <div class="flex items-center gap-2">
-                            <button id="flipCoinBtn" type="button" onclick="flipCoin()"
-                                class="px-4 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold shadow-xs cursor-pointer">
+                            <button id="flipCoinBtn" type="button" onclick="flipCoin()" class="px-4 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold shadow-xs cursor-pointer">
                                 Tung xu 3D
                             </button>
-                            <button type="button" onclick="flipCoinBulk(50)"
-                                class="px-2.5 py-1.5 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 text-xs font-bold cursor-pointer">
+                            <button type="button" onclick="flipCoinBulk(50)" class="px-2.5 py-1.5 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 text-xs font-bold cursor-pointer">
                                 +50 lần
                             </button>
-                            <button type="button" onclick="resetCoinStats()"
-                                class="px-2.5 py-1.5 rounded-lg bg-white hover:bg-slate-200 text-slate-600 border border-slate-200 text-xs font-semibold cursor-pointer">
+                            <button type="button" onclick="resetCoinStats()" class="px-2.5 py-1.5 rounded-lg bg-white hover:bg-slate-200 text-slate-600 border border-slate-200 text-xs font-semibold cursor-pointer">
                                 Reset
                             </button>
                         </div>
@@ -2412,8 +2277,7 @@
                     <div class="mt-3.5 overflow-x-auto rounded-xl border border-slate-200">
                         <table class="w-full text-left border-collapse text-xs">
                             <thead>
-                                <tr
-                                    class="bg-slate-50 border-b border-slate-200 text-[11px] font-bold uppercase text-slate-500">
+                                <tr class="bg-slate-50 border-b border-slate-200 text-[11px] font-bold uppercase text-slate-500">
                                     <th class="py-2 px-3">Mặt</th>
                                     <th class="py-2 px-3 text-right">Số lần (<span id="totalCoinFlipsDisplay">0</span>)
                                     </th>
@@ -2430,27 +2294,22 @@
                 <!-- TAB 3: BỘ BÀI 52 LÁ -->
                 <div id="prob-view-card" class="hidden p-4 sm:p-6">
                     <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-                        <span
-                            class="text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-lg">
+                        <span class="text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-lg">
                             Còn lại: <span id="deckRemainingDisplay">52 / 52 lá</span>
                         </span>
                         <div class="inline-flex bg-slate-100 p-0.5 rounded-lg border border-slate-200">
-                            <button id="btnDrawNoReplace" type="button" onclick="setDrawMode(false)"
-                                class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-600 text-white cursor-pointer">Không
+                            <button id="btnDrawNoReplace" type="button" onclick="setDrawMode(false)" class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-600 text-white cursor-pointer">Không
                                 hoàn lại</button>
-                            <button id="btnDrawWithReplace" type="button" onclick="setDrawMode(true)"
-                                class="px-2.5 py-1 rounded-md text-[11px] font-bold text-slate-600 cursor-pointer">Có
+                            <button id="btnDrawWithReplace" type="button" onclick="setDrawMode(true)" class="px-2.5 py-1 rounded-md text-[11px] font-bold text-slate-600 cursor-pointer">Có
                                 hoàn lại</button>
                         </div>
                     </div>
 
-                    <div
-                        class="card-stage flex flex-col sm:flex-row items-center justify-center gap-6 py-5 bg-slate-50/70 rounded-2xl border border-slate-100 min-h-[195px]">
+                    <div class="card-stage flex flex-col sm:flex-row items-center justify-center gap-6 py-5 bg-slate-50/70 rounded-2xl border border-slate-100 min-h-[195px]">
                         <div id="playingCard" class="playing-card shrink-0" onclick="drawCard()">
                             <div class="card-face card-back">
                                 <div class="card-back-pattern">
-                                    <div
-                                        class="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center text-white font-black text-sm border border-white/30">
+                                    <div class="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center text-white font-black text-sm border border-white/30">
                                         52</div>
                                 </div>
                             </div>
@@ -2478,14 +2337,11 @@
                         </div>
                     </div>
 
-                    <div
-                        class="mt-3.5 flex flex-wrap items-center justify-end gap-2 bg-slate-100 px-3.5 py-2.5 rounded-xl">
-                        <button id="drawCardBtn" type="button" onclick="drawCard()"
-                            class="px-4 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-xs cursor-pointer">
+                    <div class="mt-3.5 flex flex-wrap items-center justify-end gap-2 bg-slate-100 px-3.5 py-2.5 rounded-xl">
+                        <button id="drawCardBtn" type="button" onclick="drawCard()" class="px-4 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-xs cursor-pointer">
                             Rút 1 lá bài
                         </button>
-                        <button type="button" onclick="resetDeckAndStats()"
-                            class="px-3 py-1.5 rounded-lg bg-white hover:bg-slate-200 text-slate-700 border border-slate-200 text-xs font-semibold cursor-pointer">
+                        <button type="button" onclick="resetDeckAndStats()" class="px-3 py-1.5 rounded-lg bg-white hover:bg-slate-200 text-slate-700 border border-slate-200 text-xs font-semibold cursor-pointer">
                             Xào lại 52 lá
                         </button>
                     </div>
@@ -2493,8 +2349,7 @@
                     <div class="mt-3.5 overflow-x-auto rounded-xl border border-slate-200">
                         <table class="w-full text-left border-collapse text-xs">
                             <thead>
-                                <tr
-                                    class="bg-slate-50 border-b border-slate-200 text-[11px] font-bold uppercase text-slate-500">
+                                <tr class="bg-slate-50 border-b border-slate-200 text-[11px] font-bold uppercase text-slate-500">
                                     <th class="py-2 px-3">Chất bài</th>
                                     <th class="py-2 px-3 text-right">Đã rút (<span id="totalCardsDrawnDisplay">0</span>)
                                     </th>
@@ -2510,10 +2365,8 @@
             </section>
 
             <!-- CỘT PHẢI: TRỢ LÝ AI RIÊNG CHO XÁC SUẤT (GEMINI API + DỮ LIỆU THỰC NGHIỆM) -->
-            <aside id="prob-ai-assistant"
-                class="lg:col-span-5 bg-white rounded-3xl shadow-md border border-slate-200 flex flex-col h-[580px] overflow-hidden">
-                <div
-                    class="px-4 py-3.5 bg-gradient-to-r from-indigo-900 to-indigo-950 text-white flex items-center justify-between gap-2">
+            <aside id="prob-ai-assistant" class="lg:col-span-5 bg-white rounded-3xl shadow-md border border-slate-200 flex flex-col h-[580px] overflow-hidden">
+                <div class="px-4 py-3.5 bg-gradient-to-r from-indigo-900 to-indigo-950 text-white flex items-center justify-between gap-2">
                     <div class="flex items-center gap-2.5">
                         <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
                         <div>
@@ -2522,26 +2375,21 @@
                         </div>
                     </div>
                     <div class="flex items-center gap-1.5">
-                        <button type="button" onclick="setGeminiKey()" title="Cài đặt Gemini API Key"
-                            class="px-2.5 py-1 rounded-lg bg-indigo-800/90 hover:bg-indigo-700 text-[10px] font-bold text-indigo-100 border border-indigo-600 transition cursor-pointer">
+                        <button type="button" onclick="setGeminiKey()" title="Cài đặt Gemini API Key" class="px-2.5 py-1 rounded-lg bg-indigo-800/90 hover:bg-indigo-700 text-[10px] font-bold text-indigo-100 border border-indigo-600 transition cursor-pointer">
                             <i class="fa-solid fa-key mr-1"></i>API Key
                         </button>
                     </div>
                 </div>
 
-                <div
-                    class="px-3.5 py-2 bg-indigo-50/90 border-b border-indigo-100 text-[11px] text-indigo-950 flex items-center justify-between gap-2">
+                <div class="px-3.5 py-2 bg-indigo-50/90 border-b border-indigo-100 text-[11px] text-indigo-950 flex items-center justify-between gap-2">
                     <span class="truncate font-medium" id="probAiContextBadge">📡 Xúc xắc (1 viên) • Đã ghi nhận 0
                         mặt</span>
-                    <span id="probAiModeTag"
-                        class="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded bg-white text-indigo-700 border border-indigo-200">Tự
+                    <span id="probAiModeTag" class="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded bg-white text-indigo-700 border border-indigo-200">Tự
                         động</span>
                 </div>
 
-                <div id="probAiChatMessages"
-                    class="chat-scroll flex-1 p-3.5 overflow-y-auto space-y-3 bg-slate-50/60 text-xs sm:text-sm">
-                    <div
-                        class="bg-white border border-slate-200 rounded-2xl rounded-tl-sm p-3.5 shadow-2xs text-slate-700 leading-relaxed">
+                <div id="probAiChatMessages" class="chat-scroll flex-1 p-3.5 overflow-y-auto space-y-3 bg-slate-50/60 text-xs sm:text-sm">
+                    <div class="bg-white border border-slate-200 rounded-2xl rounded-tl-sm p-3.5 shadow-2xs text-slate-700 leading-relaxed">
                         Chào em! Mình là <strong>Trợ lý AI chuyên Xác suất</strong>, đã kết nối trực tiếp với bàn thí
                         nghiệm bên cạnh. Em hãy thử <strong>tung xúc xắc, đồng xu hoặc rút bài</strong> rồi bấm gợi ý
                         hoặc đặt câu hỏi bài tập xác suất nhé!
@@ -2549,26 +2397,20 @@
                 </div>
 
                 <div class="px-3 py-2 bg-white border-t border-slate-100 flex gap-1.5 overflow-x-auto no-scrollbar">
-                    <button type="button" onclick="askProbQuickPrompt('explain_stats')"
-                        class="shrink-0 px-2.5 py-1 rounded-full bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 text-[11px] font-semibold cursor-pointer">
+                    <button type="button" onclick="askProbQuickPrompt('explain_stats')" class="shrink-0 px-2.5 py-1 rounded-full bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 text-[11px] font-semibold cursor-pointer">
                         📊 Giải thích số liệu đang quay
                     </button>
-                    <button type="button" onclick="askProbQuickPrompt('give_quiz')"
-                        class="shrink-0 px-2.5 py-1 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 text-[11px] font-semibold cursor-pointer">
+                    <button type="button" onclick="askProbQuickPrompt('give_quiz')" class="shrink-0 px-2.5 py-1 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 text-[11px] font-semibold cursor-pointer">
                         🎯 Ra 1 câu hỏi từ tình huống này
                     </button>
-                    <button type="button" onclick="askProbQuickPrompt('sample_space')"
-                        class="shrink-0 px-2.5 py-1 rounded-full bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 text-[11px] font-semibold cursor-pointer">
+                    <button type="button" onclick="askProbQuickPrompt('sample_space')" class="shrink-0 px-2.5 py-1 rounded-full bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 text-[11px] font-semibold cursor-pointer">
                         Ω Không gian mẫu là gì?
                     </button>
                 </div>
 
-                <form onsubmit="handleProbAISendMessage(event)"
-                    class="p-3 bg-white border-t border-slate-200 flex items-center gap-2">
-                    <input id="probAiUserInput" type="text" placeholder="Hỏi về không gian mẫu, biến cố, xác suất..."
-                        class="flex-1 px-3.5 py-2 rounded-xl bg-slate-100 border border-slate-200 text-xs sm:text-sm focus:outline-none focus:bg-white focus:border-indigo-500 transition-all" />
-                    <button id="probAiSendBtn" type="submit"
-                        class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold shadow-xs transition-all cursor-pointer disabled:opacity-50">
+                <form onsubmit="handleProbAISendMessage(event)" class="p-3 bg-white border-t border-slate-200 flex items-center gap-2">
+                    <input id="probAiUserInput" type="text" placeholder="Hỏi về không gian mẫu, biến cố, xác suất..." class="flex-1 px-3.5 py-2 rounded-xl bg-slate-100 border border-slate-200 text-xs sm:text-sm focus:outline-none focus:bg-white focus:border-indigo-500 transition-all" />
+                    <button id="probAiSendBtn" type="submit" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold shadow-xs transition-all cursor-pointer disabled:opacity-50">
                         Gửi
                     </button>
                 </form>
@@ -2584,8 +2426,7 @@
     <main id="examPage" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
         <!-- Màn hình chờ / Sảnh vào phòng thi -->
         <div id="examLobbyView" class="max-w-3xl mx-auto space-y-6">
-            <button type="button" onclick="showPage('homePage')"
-                class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 transition">
+            <button type="button" onclick="showPage('homePage')" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 transition">
                 <i class="fa-solid fa-arrow-left"></i> Quay lại trang chủ
             </button>
 
@@ -2603,8 +2444,7 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                             <label class="block text-xs font-bold text-slate-700 mb-1.5">Chọn đề kiểm tra</label>
-                            <select id="examSelectDeck" onchange="updateExamLobbyInfo()"
-                                class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-semibold text-slate-800 outline-none focus:border-rose-500">
+                            <select id="examSelectDeck" onchange="updateExamLobbyInfo()" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-semibold text-slate-800 outline-none focus:border-rose-500">
                                 <option value="thpt_sample">Đề Kiểm Tra Tổng Hợp Toán 12 (10 câu - 15 phút)</option>
                                 <option value="math12">Ngân hàng câu hỏi lớp Toán 12</option>
                                 <option value="math11">Ngân hàng câu hỏi lớp Toán 11</option>
@@ -2614,8 +2454,7 @@
                         <div>
                             <label class="block text-xs font-bold text-slate-700 mb-1.5">Giới hạn số lần cảnh báo
                                 thoát</label>
-                            <select id="examMaxViolations"
-                                class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-semibold text-slate-800 outline-none focus:border-rose-500">
+                            <select id="examMaxViolations" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm font-semibold text-slate-800 outline-none focus:border-rose-500">
                                 <option value="3" selected>Tối đa 3 lần (Thu bài ở lần thứ 3)</option>
                                 <option value="2">Tối đa 2 lần (Nghiêm ngặt)</option>
                                 <option value="1">1 lần duy nhất (Thoát là thu bài ngay)</option>
@@ -2623,8 +2462,7 @@
                         </div>
                     </div>
 
-                    <div
-                        class="bg-amber-50 border border-amber-200 rounded-2xl p-4 sm:p-5 space-y-2.5 text-xs sm:text-sm text-amber-950">
+                    <div class="bg-amber-50 border border-amber-200 rounded-2xl p-4 sm:p-5 space-y-2.5 text-xs sm:text-sm text-amber-950">
                         <div class="font-extrabold text-amber-900 flex items-center gap-2">
                             <i class="fa-solid fa-triangle-exclamation text-amber-600"></i>
                             <span>NỘI QUY PHÒNG THI BẮT BUỘC:</span>
@@ -2649,8 +2487,7 @@
                             Thí sinh: <strong id="examCandidateName" class="text-slate-800">Khách (Tự do)</strong> •
                             Số câu: <strong id="examQuestionCountLabel" class="text-rose-600">10 câu</strong>
                         </div>
-                        <button type="button" onclick="startStrictExam()"
-                            class="px-7 py-3.5 bg-rose-600 hover:bg-rose-700 text-white font-extrabold rounded-xl shadow-lg shadow-rose-500/25 transition flex items-center gap-2 text-sm">
+                        <button type="button" onclick="startStrictExam()" class="px-7 py-3.5 bg-rose-600 hover:bg-rose-700 text-white font-extrabold rounded-xl shadow-lg shadow-rose-500/25 transition flex items-center gap-2 text-sm">
                             <i class="fa-solid fa-lock"></i> Bắt đầu làm bài ngay
                         </button>
                     </div>
@@ -2660,8 +2497,7 @@
 
         <!-- Giao diện đang làm bài thi -->
         <div id="examActiveView" class="hidden space-y-5 select-none">
-            <div
-                class="bg-slate-900 text-white rounded-2xl p-4 shadow-lg flex flex-wrap items-center justify-between gap-3 sticky top-2 z-30 border border-slate-700">
+            <div class="bg-slate-900 text-white rounded-2xl p-4 shadow-lg flex flex-wrap items-center justify-between gap-3 sticky top-2 z-30 border border-slate-700">
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 rounded-xl bg-rose-600 flex items-center justify-center font-black">
                         <i class="fa-solid fa-shield-halved"></i>
@@ -2675,23 +2511,19 @@
                 <div class="flex flex-wrap items-center gap-2.5 sm:gap-4">
                     <div class="px-3.5 py-2 rounded-xl bg-slate-800 border border-slate-700 flex items-center gap-2">
                         <i class="fa-regular fa-clock text-amber-400"></i>
-                        <span id="examTimerDisplay"
-                            class="font-mono font-extrabold text-base sm:text-lg text-amber-300">15:00</span>
+                        <span id="examTimerDisplay" class="font-mono font-extrabold text-base sm:text-lg text-amber-300">15:00</span>
                     </div>
 
-                    <div id="examViolationBadge"
-                        class="px-3.5 py-2 rounded-xl bg-emerald-950/80 border border-emerald-700 text-emerald-300 text-xs font-bold flex items-center gap-1.5">
+                    <div id="examViolationBadge" class="px-3.5 py-2 rounded-xl bg-emerald-950/80 border border-emerald-700 text-emerald-300 text-xs font-bold flex items-center gap-1.5">
                         <i class="fa-solid fa-eye"></i>
                         <span>Vi phạm: <strong id="examViolationCountText">0/3</strong></span>
                     </div>
 
-                    <button type="button" onclick="toggleCasioWidget(true)"
-                        class="px-3 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold transition">
+                    <button type="button" onclick="toggleCasioWidget(true)" class="px-3 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold transition">
                         <i class="fa-solid fa-calculator mr-1"></i> Casio
                     </button>
 
-                    <button type="button" onclick="confirmSubmitExam()"
-                        class="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs sm:text-sm font-extrabold shadow-md transition">
+                    <button type="button" onclick="confirmSubmitExam()" class="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs sm:text-sm font-extrabold shadow-md transition">
                         <i class="fa-solid fa-paper-plane mr-1"></i> Nộp bài
                     </button>
                 </div>
@@ -2700,25 +2532,19 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
                 <div id="examQuestionsContainer" class="lg:col-span-8 space-y-5"></div>
 
-                <aside
-                    class="lg:col-span-4 bg-white rounded-2xl border border-slate-200 p-5 shadow-sm space-y-4 sticky top-24">
+                <aside class="lg:col-span-4 bg-white rounded-2xl border border-slate-200 p-5 shadow-sm space-y-4 sticky top-24">
                     <div class="flex items-center justify-between border-b border-slate-100 pb-3">
                         <h3 class="font-bold text-slate-900 text-sm">Phiếu trả lời trắc nghiệm</h3>
                         <span id="examAnsweredProgress" class="text-xs font-bold text-blue-600">0/10 câu</span>
                     </div>
                     <div id="examNavGrid" class="grid grid-cols-5 gap-2"></div>
-                    <div
-                        class="flex items-center justify-between text-[11px] text-slate-500 pt-2 border-t border-slate-100">
-                        <span class="flex items-center gap-1.5"><span
-                                class="w-3 h-3 rounded bg-blue-600 inline-block"></span> Đã làm</span>
-                        <span class="flex items-center gap-1.5"><span
-                                class="w-3 h-3 rounded bg-slate-100 border border-slate-300 inline-block"></span> Chưa
+                    <div class="flex items-center justify-between text-[11px] text-slate-500 pt-2 border-t border-slate-100">
+                        <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-blue-600 inline-block"></span> Đã làm</span>
+                        <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-slate-100 border border-slate-300 inline-block"></span> Chưa
                             làm</span>
-                        <span class="flex items-center gap-1.5"><span
-                                class="w-3 h-3 rounded bg-amber-400 inline-block"></span> Đánh dấu</span>
+                        <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-amber-400 inline-block"></span> Đánh dấu</span>
                     </div>
-                    <div id="examViolationLogBox"
-                        class="hidden bg-rose-50 border border-rose-200 rounded-xl p-3 space-y-1 text-[11px] text-rose-800">
+                    <div id="examViolationLogBox" class="hidden bg-rose-50 border border-rose-200 rounded-xl p-3 space-y-1 text-[11px] text-rose-800">
                         <div class="font-bold"><i class="fa-solid fa-circle-exclamation mr-1"></i>Nhật ký giám sát:
                         </div>
                         <ul id="examViolationLogList" class="space-y-0.5 pl-4 list-disc"></ul>
@@ -2730,8 +2556,7 @@
         <!-- Giao diện kết quả sau khi nộp bài -->
         <div id="examResultView" class="hidden max-w-4xl mx-auto space-y-6">
             <div class="bg-white rounded-3xl border border-slate-200 shadow-xl p-6 sm:p-8 text-center space-y-4">
-                <div id="examFinalIcon"
-                    class="w-20 h-20 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto text-4xl">
+                <div id="examFinalIcon" class="w-20 h-20 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto text-4xl">
                     <i class="fa-solid fa-award"></i>
                 </div>
                 <h2 id="examFinalHeadline" class="text-2xl sm:text-3xl font-extrabold text-slate-900">Đã nộp bài kiểm
@@ -2758,12 +2583,10 @@
                 </div>
 
                 <div class="flex flex-wrap justify-center gap-3 pt-3">
-                    <button type="button" onclick="returnToExamLobby()"
-                        class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-bold transition">
+                    <button type="button" onclick="returnToExamLobby()" class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-bold transition">
                         <i class="fa-solid fa-rotate-left mr-1.5"></i> Quay lại sảnh phòng thi
                     </button>
-                    <button type="button" onclick="showPage('homePage')"
-                        class="px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-bold transition">
+                    <button type="button" onclick="showPage('homePage')" class="px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-bold transition">
                         Về trang chủ
                     </button>
                 </div>
@@ -2774,11 +2597,9 @@
     </main>
 
     <!-- OVERLAY CẢNH BÁO ĐỎ KHI THOÁT TAB / THOÁT FULLSCREEN TRONG LÚC THI -->
-    <div id="examWarningOverlay"
-        class="fixed inset-0 z-[120] hidden items-center justify-center bg-rose-950/95 backdrop-blur-md p-4 text-white text-center">
+    <div id="examWarningOverlay" class="fixed inset-0 z-[120] hidden items-center justify-center bg-rose-950/95 backdrop-blur-md p-4 text-white text-center">
         <div class="max-w-md w-full bg-slate-900 border-2 border-rose-500 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-5">
-            <div
-                class="w-16 h-16 rounded-full bg-rose-600/20 border-2 border-rose-500 text-rose-400 flex items-center justify-center mx-auto text-3xl animate-bounce">
+            <div class="w-16 h-16 rounded-full bg-rose-600/20 border-2 border-rose-500 text-rose-400 flex items-center justify-center mx-auto text-3xl animate-bounce">
                 <i class="fa-solid fa-triangle-exclamation"></i>
             </div>
             <div class="space-y-2">
@@ -2792,8 +2613,7 @@
                     Số lần vi phạm: <span id="examOverlayViolationCount">1/3</span>
                 </p>
             </div>
-            <button type="button" onclick="resumeExamFullscreen()"
-                class="w-full py-3.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-extrabold text-sm shadow-lg transition">
+            <button type="button" onclick="resumeExamFullscreen()" class="w-full py-3.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-extrabold text-sm shadow-lg transition">
                 Quay lại toàn màn hình &amp; Tiếp tục làm bài
             </button>
         </div>
@@ -2801,23 +2621,19 @@
 
 
     <!-- MÁY TÍNH KHOA HỌC CASIO FX-580VN X CLASSWIZ (KÉO THẢ MƯỢT) -->
-    <div id="casioWidget" class="c580-shell fixed bottom-5 left-5 z-[95] hidden"
-        aria-label="Máy tính Casio fx-580VN X ClassWiz">
+    <div id="casioWidget" class="c580-shell fixed bottom-5 left-5 z-[95] hidden" aria-label="Máy tính Casio fx-580VN X ClassWiz">
         <div class="c580-body-inner">
-            <div id="casioDragHeader" class="c580-top-bezel cursor-grab active:cursor-grabbing select-none"
-                title="Kéo để di chuyển máy tính">
+            <div id="casioDragHeader" class="c580-top-bezel cursor-grab active:cursor-grabbing select-none" title="Kéo để di chuyển máy tính">
                 <div class="c580-brand-group pointer-events-none">
                     <span class="c580-brand">CASIO</span>
                     <span class="c580-classwiz">CLASSWIZ</span>
                     <span class="c580-model">fx-580VN X</span>
                 </div>
                 <div class="flex items-center gap-1">
-                    <button type="button" onclick="toggleCasioMinimize()" id="casioMinBtn" title="Thu nhỏ / Mở rộng"
-                        class="c580-win-btn">
+                    <button type="button" onclick="toggleCasioMinimize()" id="casioMinBtn" title="Thu nhỏ / Mở rộng" class="c580-win-btn">
                         <i id="casioMinIcon" class="fa-solid fa-minus"></i>
                     </button>
-                    <button type="button" onclick="toggleCasioWidget(false)" title="Đóng máy tính"
-                        class="c580-win-btn close-btn">
+                    <button type="button" onclick="toggleCasioWidget(false)" title="Đóng máy tính" class="c580-win-btn close-btn">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
@@ -2836,8 +2652,7 @@
                                 <span id="stModeTag">1:CALC</span>
                             </div>
                             <div class="flex items-center gap-1.5">
-                                <span id="stAngle" class="c580-badge-on cursor-pointer" onclick="casioToggleAngle()"
-                                    title="Bấm đổi DEG/RAD">DEG</span>
+                                <span id="stAngle" class="c580-badge-on cursor-pointer" onclick="casioToggleAngle()" title="Bấm đổi DEG/RAD">DEG</span>
                                 <span>MathIO</span>
                             </div>
                         </div>
@@ -2850,27 +2665,20 @@
                     <div class="c580-side-col">
                         <div class="c580-key-wrap">
                             <div class="c580-sublabels"><span></span><span></span></div>
-                            <button id="btnShift" type="button" class="c580-top-pill"
-                                onclick="c580PressShift()">SHIFT</button>
+                            <button id="btnShift" type="button" class="c580-top-pill" onclick="c580PressShift()">SHIFT</button>
                         </div>
                         <div class="c580-key-wrap">
                             <div class="c580-sublabels"><span></span><span></span></div>
-                            <button id="btnAlpha" type="button" class="c580-top-pill"
-                                onclick="c580PressAlpha()">ALPHA</button>
+                            <button id="btnAlpha" type="button" class="c580-top-pill" onclick="c580PressAlpha()">ALPHA</button>
                         </div>
                     </div>
 
                     <div class="c580-dpad" aria-label="Phím điều hướng">
-                        <button type="button" class="c580-dpad-btn dpad-up" onclick="c580Move('up')"
-                            title="Lên">▲</button>
-                        <button type="button" class="c580-dpad-btn dpad-down" onclick="c580Move('down')"
-                            title="Xuống">▼</button>
-                        <button type="button" class="c580-dpad-btn dpad-left" onclick="c580Move('left')"
-                            title="Trái">◀</button>
-                        <button type="button" class="c580-dpad-btn dpad-right" onclick="c580Move('right')"
-                            title="Phải">▶</button>
-                        <button type="button" class="c580-dpad-center" onclick="c580Equals()"
-                            title="Xác nhận">OK</button>
+                        <button type="button" class="c580-dpad-btn dpad-up" onclick="c580Move('up')" title="Lên">▲</button>
+                        <button type="button" class="c580-dpad-btn dpad-down" onclick="c580Move('down')" title="Xuống">▼</button>
+                        <button type="button" class="c580-dpad-btn dpad-left" onclick="c580Move('left')" title="Trái">◀</button>
+                        <button type="button" class="c580-dpad-btn dpad-right" onclick="c580Move('right')" title="Phải">▶</button>
+                        <button type="button" class="c580-dpad-center" onclick="c580Equals()" title="Xác nhận">OK</button>
                     </div>
 
                     <div class="c580-side-col">
@@ -3010,8 +2818,7 @@
                         <button type="button" class="c580-btn-num" onclick="c580Digit('9')">9</button>
                     </div>
                     <div class="c580-key-wrap">
-                        <div class="c580-sublabels"><span class="lbl-shift">INS</span><span
-                                class="lbl-alpha">UNDO</span></div>
+                        <div class="c580-sublabels"><span class="lbl-shift">INS</span><span class="lbl-alpha">UNDO</span></div>
                         <button type="button" class="c580-btn-blue" onclick="c580Del()">DEL</button>
                     </div>
                     <div class="c580-key-wrap">
@@ -3068,8 +2875,7 @@
                         <button type="button" class="c580-btn-num" onclick="c580Digit('0')">0</button>
                     </div>
                     <div class="c580-key-wrap">
-                        <div class="c580-sublabels"><span class="lbl-shift">Ran#</span><span
-                                class="lbl-alpha">RanInt</span></div>
+                        <div class="c580-sublabels"><span class="lbl-shift">Ran#</span><span class="lbl-alpha">RanInt</span></div>
                         <button type="button" class="c580-btn-num" onclick="c580Digit('.')">.</button>
                     </div>
                     <div class="c580-key-wrap">
@@ -3078,8 +2884,7 @@
                         <button type="button" class="c580-btn-num text-[11px]" onclick="c580Exp10()">×10ˣ</button>
                     </div>
                     <div class="c580-key-wrap">
-                        <div class="c580-sublabels"><span class="lbl-shift">%</span><span
-                                class="lbl-alpha">PreAns</span></div>
+                        <div class="c580-sublabels"><span class="lbl-shift">%</span><span class="lbl-alpha">PreAns</span></div>
                         <button type="button" class="c580-btn-num text-[11px]" onclick="c580Ans()">Ans</button>
                     </div>
                     <div class="c580-key-wrap">
@@ -3100,21 +2905,16 @@
                     Phát</span>
                 <span class="font-medium text-slate-600">(Lớp 12A6)</span>
             </p>
-            <p><span class="font-bold text-slate-800">Lê Huỳnh Quốc Thắng</span> <span
-                    class="font-medium text-slate-600">(Lớp 12A7)</span></p>
-            <p>Sponsor: <span class="font-bold text-slate-800">Võ Nguyễn Duy</span> <span
-                    class="font-medium text-slate-600">(Lớp 12A7)</span></p>
+            <p><span class="font-bold text-slate-800">Lê Huỳnh Quốc Thắng</span> <span class="font-medium text-slate-600">(Lớp 12A7)</span></p>
+            <p>Sponsor: <span class="font-bold text-slate-800">Võ Nguyễn Duy</span> <span class="font-medium text-slate-600">(Lớp 12A7)</span></p>
         </div>
     </footer>
 
     <!-- CỤM CÔNG CỤ GÓC DƯỚI: MINI GEOGEBRA + TRỢ LÝ AI -->
     <div id="aiChatWidget" class="fixed bottom-5 right-5 z-[60] flex flex-col items-end gap-2.5">
         <!-- BẢNG MINI GEOGEBRA 2D & 3D TƯƠNG TÁC NHANH -->
-        <section id="miniGeoGebraPanel"
-            class="hidden w-[min(94vw,430px)] bg-white rounded-3xl border border-indigo-200 shadow-2xl overflow-hidden flex-col"
-            aria-label="Mini GeoGebra 2D & Hình Học">
-            <div
-                class="bg-gradient-to-r from-indigo-700 via-violet-700 to-purple-700 text-white px-3.5 py-2.5 flex items-center justify-between gap-2">
+        <section id="miniGeoGebraPanel" class="hidden w-[min(94vw,430px)] bg-white rounded-3xl border border-indigo-200 shadow-2xl overflow-hidden flex-col" aria-label="Mini GeoGebra 2D & Hình Học">
+            <div class="bg-gradient-to-r from-indigo-700 via-violet-700 to-purple-700 text-white px-3.5 py-2.5 flex items-center justify-between gap-2">
                 <div class="flex items-center gap-2">
                     <div class="w-7 h-7 rounded-xl bg-white/15 flex items-center justify-center text-sm font-black">
                         <i class="fa-solid fa-compass-drafting"></i>
@@ -3127,19 +2927,16 @@
                 </div>
 
                 <div class="flex items-center gap-1 bg-indigo-950/45 p-0.5 rounded-lg">
-                    <button type="button" id="miniGgbTab2D" onclick="switchMiniGgbMode('2d')"
-                        class="ggb-mode-pill active">2D Oxy</button>
+                    <button type="button" id="miniGgbTab2D" onclick="switchMiniGgbMode('2d')" class="ggb-mode-pill active">2D Oxy</button>
                     <button type="button" id="miniGgbTab3D" onclick="switchMiniGgbMode('3d')" class="ggb-mode-pill">Hình
                         Học</button>
                 </div>
 
                 <div class="flex items-center gap-1">
-                    <button type="button" onclick="openGraphModal('3d')" title="Mở rộng toàn màn hình Hình Học"
-                        class="w-7 h-7 rounded-lg hover:bg-white/15 flex items-center justify-center text-xs">
+                    <button type="button" onclick="openGraphModal('3d')" title="Mở rộng toàn màn hình Hình Học" class="w-7 h-7 rounded-lg hover:bg-white/15 flex items-center justify-center text-xs">
                         <i class="fa-solid fa-expand"></i>
                     </button>
-                    <button type="button" onclick="toggleMiniGeoGebra(false)" title="Thu gọn Mini GeoGebra"
-                        class="w-7 h-7 rounded-lg hover:bg-white/15 flex items-center justify-center text-xs">
+                    <button type="button" onclick="toggleMiniGeoGebra(false)" title="Thu gọn Mini GeoGebra" class="w-7 h-7 rounded-lg hover:bg-white/15 flex items-center justify-center text-xs">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
@@ -3148,73 +2945,55 @@
             <!-- CHẾ ĐỘ 1: BẢNG VẼ HÌNH HỌC PHẲNG 2D TƯƠNG TÁC -->
             <div id="miniGgbBody2D" class="flex flex-col bg-slate-50">
                 <div class="p-2 bg-white border-b border-slate-200 grid grid-cols-6 gap-1">
-                    <button type="button" data-ggb-tool="point" onclick="setMiniGgbTool('point')"
-                        class="ggb-tool-btn active" title="Chấm điểm A, B, C... lên mặt phẳng">
+                    <button type="button" data-ggb-tool="point" onclick="setMiniGgbTool('point')" class="ggb-tool-btn active" title="Chấm điểm A, B, C... lên mặt phẳng">
                         <i class="fa-solid fa-circle-dot text-xs text-rose-500"></i>
                         <span>Điểm</span>
                     </button>
-                    <button type="button" data-ggb-tool="segment" onclick="setMiniGgbTool('segment')"
-                        class="ggb-tool-btn" title="Chọn 2 điểm để nối đoạn thẳng">
+                    <button type="button" data-ggb-tool="segment" onclick="setMiniGgbTool('segment')" class="ggb-tool-btn" title="Chọn 2 điểm để nối đoạn thẳng">
                         <i class="fa-solid fa-slash text-xs"></i>
                         <span>Đoạn</span>
                     </button>
-                    <button type="button" data-ggb-tool="line" onclick="setMiniGgbTool('line')" class="ggb-tool-btn"
-                        title="Đường thẳng kéo dài qua 2 điểm">
+                    <button type="button" data-ggb-tool="line" onclick="setMiniGgbTool('line')" class="ggb-tool-btn" title="Đường thẳng kéo dài qua 2 điểm">
                         <i class="fa-solid fa-arrows-left-right text-xs"></i>
                         <span>Đ.thẳng</span>
                     </button>
-                    <button type="button" data-ggb-tool="polygon" onclick="setMiniGgbTool('polygon')"
-                        class="ggb-tool-btn" title="Click nhiều điểm rồi bấm lại điểm đầu để khép kín đa giác">
+                    <button type="button" data-ggb-tool="polygon" onclick="setMiniGgbTool('polygon')" class="ggb-tool-btn" title="Click nhiều điểm rồi bấm lại điểm đầu để khép kín đa giác">
                         <i class="fa-solid fa-draw-polygon text-xs"></i>
                         <span>Đa giác</span>
                     </button>
-                    <button type="button" data-ggb-tool="circle" onclick="setMiniGgbTool('circle')" class="ggb-tool-btn"
-                        title="Chọn tâm I rồi chọn 1 điểm trên đường tròn">
+                    <button type="button" data-ggb-tool="circle" onclick="setMiniGgbTool('circle')" class="ggb-tool-btn" title="Chọn tâm I rồi chọn 1 điểm trên đường tròn">
                         <i class="fa-regular fa-circle text-xs"></i>
                         <span>Đ.tròn</span>
                     </button>
-                    <button type="button" data-ggb-tool="perp" onclick="setMiniGgbTool('perp')" class="ggb-tool-btn"
-                        title="Chọn 1 điểm và 1 đoạn thẳng để dựng đường vuông góc">
+                    <button type="button" data-ggb-tool="perp" onclick="setMiniGgbTool('perp')" class="ggb-tool-btn" title="Chọn 1 điểm và 1 đoạn thẳng để dựng đường vuông góc">
                         <span class="text-xs font-bold">⊥</span>
                         <span>Vuông góc</span>
                     </button>
                 </div>
 
                 <div class="px-2.5 py-1.5 bg-slate-100 border-b border-slate-200 flex items-center gap-1.5">
-                    <span class="text-[11px] font-extrabold text-indigo-700 shrink-0"><i
-                            class="fa-solid fa-terminal"></i> Lệnh:</span>
-                    <input id="miniGgbCmdInput" type="text" placeholder="VD: A=(1,2) | B=(-2,3) | y=x^2-2"
-                        class="flex-1 min-w-0 bg-white border border-slate-300 rounded-lg px-2 py-1 text-xs font-mono outline-none focus:border-indigo-500"
-                        onkeydown="if(event.key==='Enter')runMiniGgbCommand()">
-                    <button type="button" onclick="runMiniGgbCommand()"
-                        class="px-2.5 py-1 rounded-lg bg-indigo-600 text-white text-[11px] font-bold hover:bg-indigo-700 shrink-0">Vẽ</button>
+                    <span class="text-[11px] font-extrabold text-indigo-700 shrink-0"><i class="fa-solid fa-terminal"></i> Lệnh:</span>
+                    <input id="miniGgbCmdInput" type="text" placeholder="VD: A=(1,2) | B=(-2,3) | y=x^2-2" class="flex-1 min-w-0 bg-white border border-slate-300 rounded-lg px-2 py-1 text-xs font-mono outline-none focus:border-indigo-500" onkeydown="if(event.key==='Enter')runMiniGgbCommand()">
+                    <button type="button" onclick="runMiniGgbCommand()" class="px-2.5 py-1 rounded-lg bg-indigo-600 text-white text-[11px] font-bold hover:bg-indigo-700 shrink-0">Vẽ</button>
                 </div>
 
                 <div class="relative bg-white">
-                    <canvas id="miniGgbCanvas2D" width="420" height="245"
-                        class="w-full h-[245px] block cursor-crosshair touch-none"></canvas>
-                    <div id="miniGgbStatusTip"
-                        class="absolute bottom-1.5 left-2 right-2 bg-slate-900/80 text-white text-[10.5px] px-2.5 py-1 rounded-lg backdrop-blur-sm flex items-center justify-between gap-2">
+                    <canvas id="miniGgbCanvas2D" width="420" height="245" class="w-full h-[245px] block cursor-crosshair touch-none"></canvas>
+                    <div id="miniGgbStatusTip" class="absolute bottom-1.5 left-2 right-2 bg-slate-900/80 text-white text-[10.5px] px-2.5 py-1 rounded-lg backdrop-blur-sm flex items-center justify-between gap-2">
                         <span id="miniGgbHintText">Click lên lưới tọa độ để đặt điểm (tự bắt dính ô lưới)</span>
                         <span id="miniGgbCoordBadge" class="font-mono text-amber-300 shrink-0">(0; 0)</span>
                     </div>
                 </div>
 
-                <div
-                    class="px-2.5 py-2 bg-white border-t border-slate-200 flex items-center justify-between gap-1.5 text-[11px]">
+                <div class="px-2.5 py-2 bg-white border-t border-slate-200 flex items-center justify-between gap-1.5 text-[11px]">
                     <div class="flex items-center gap-1">
-                        <button type="button" onclick="undoMiniGgb()"
-                            class="px-2 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold"
-                            title="Hoàn tác bước vừa vẽ">
+                        <button type="button" onclick="undoMiniGgb()" class="px-2 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold" title="Hoàn tác bước vừa vẽ">
                             <i class="fa-solid fa-rotate-left"></i> Lùi
                         </button>
-                        <button type="button" onclick="clearMiniGgb()"
-                            class="px-2 py-1 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-600 font-semibold"
-                            title="Xóa toàn bộ hình">
+                        <button type="button" onclick="clearMiniGgb()" class="px-2 py-1 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-600 font-semibold" title="Xóa toàn bộ hình">
                             <i class="fa-solid fa-trash-can"></i> Xóa
                         </button>
-                        <label
-                            class="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-slate-100 text-slate-700 font-semibold cursor-pointer">
+                        <label class="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-slate-100 text-slate-700 font-semibold cursor-pointer">
                             <input id="miniGgbSnapToggle" type="checkbox" checked class="rounded text-indigo-600">
                             <span>Bắt lưới</span>
                         </label>
@@ -3232,12 +3011,10 @@
                     dựng mặt phẳng và khối không gian theo từng đề bài riêng biệt.
                 </p>
                 <div class="grid grid-cols-2 gap-2">
-                    <button type="button" onclick="openGraphModal('3d')"
-                        class="py-2.5 px-3 rounded-xl bg-indigo-600 text-white font-bold hover:bg-indigo-700 transition">
+                    <button type="button" onclick="openGraphModal('3d')" class="py-2.5 px-3 rounded-xl bg-indigo-600 text-white font-bold hover:bg-indigo-700 transition">
                         <i class="fa-solid fa-cube mr-1"></i> Dựng Hình Học 3D
                     </button>
-                    <button type="button" onclick="openGraphModal('geom2d')"
-                        class="py-2.5 px-3 rounded-xl bg-white border border-slate-300 text-slate-800 font-bold hover:bg-slate-100 transition">
+                    <button type="button" onclick="openGraphModal('geom2d')" class="py-2.5 px-3 rounded-xl bg-white border border-slate-300 text-slate-800 font-bold hover:bg-slate-100 transition">
                         <i class="fa-solid fa-draw-polygon mr-1"></i> Dựng Hình Học 2D
                     </button>
                 </div>
@@ -3245,55 +3022,36 @@
         </section>
 
         <!-- PANEL TRỢ LÝ HỌC TẬP AI -->
-        <section id="aiChatPanel"
-            class="hidden w-[min(88vw,330px)] h-[min(54vh,400px)] bg-white rounded-3xl border border-slate-200 shadow-2xl overflow-hidden flex-col"
-            aria-label="Trợ lý học tập AI">
-            <div
-                class="bg-gradient-to-r from-blue-700 to-indigo-700 text-white px-5 py-3.5 flex items-center justify-between">
+        <section id="aiChatPanel" class="hidden w-[min(88vw,330px)] h-[min(54vh,400px)] bg-white rounded-3xl border border-slate-200 shadow-2xl overflow-hidden flex-col" aria-label="Trợ lý học tập AI">
+            <div class="bg-gradient-to-r from-blue-700 to-indigo-700 text-white px-5 py-3.5 flex items-center justify-between">
                 <div class="flex items-center gap-3">
-                    <div class="w-9 h-9 rounded-2xl bg-white/15 flex items-center justify-center"><i
-                            class="fa-solid fa-graduation-cap"></i></div>
+                    <div class="w-9 h-9 rounded-2xl bg-white/15 flex items-center justify-center"><i class="fa-solid fa-graduation-cap"></i></div>
                     <div>
                         <h2 class="font-bold text-sm">Trợ lý học tập AI</h2>
                         <p class="text-[11px] text-blue-100">Hỗ trợ Toán VDC và ôn thi THPT</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-1">
-                    <button type="button" onclick="toggleAIChat(false)" aria-label="Đóng chat"
-                        class="w-8 h-8 rounded-xl hover:bg-white/15 flex items-center justify-center"><i
-                            class="fa-solid fa-xmark"></i></button>
+                    <button type="button" onclick="toggleAIChat(false)" aria-label="Đóng chat" class="w-8 h-8 rounded-xl hover:bg-white/15 flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button>
                 </div>
             </div>
-            <div id="aiChatMessages" class="chat-scroll flex-1 overflow-y-auto p-3 space-y-2 bg-slate-50"
-                aria-live="polite">
+            <div id="aiChatMessages" class="chat-scroll flex-1 overflow-y-auto p-3 space-y-2 bg-slate-50" aria-live="polite">
                 <div class="flex justify-start">
-                    <div
-                        class="chat-message max-w-[88%] bg-white border border-slate-200 rounded-2xl rounded-tl-md px-4 py-3 text-sm text-slate-700 shadow-sm">
-                        Chào em! Thầy/cô có thể giúp em giải thích bài toán mở rộng hoặc hướng dẫn bấm máy Casio. Em cần
-                        hỏi gì nào?</div>
+                    <div class="chat-message text-left max-w-[96%] bg-white border border-slate-200 rounded-2xl rounded-tl-md px-4 py-3 text-sm leading-relaxed">Chào em! Thầy/cô có thể giúp em giải thích bài toán mở rộng hoặc hướng dẫn bấm máy Casio. Em cần hỏi gì nào?</div>
                 </div>
             </div>
             <form id="aiChatForm" class="p-2 border-t border-slate-200 bg-white" onsubmit="sendAIChatMessage(event)">
-                <div
-                    class="flex items-end gap-2 rounded-2xl border border-slate-200 bg-slate-50 p-2 focus-within:border-blue-400 focus-within:ring-2 focus-within:ring-blue-100">
-                    <textarea id="aiChatInput" rows="1" maxlength="1500" aria-label="Nhập câu hỏi"
-                        placeholder="Nhập câu hỏi bài tập Toán..."
-                        class="flex-1 resize-none bg-transparent px-2 py-2 text-sm outline-none max-h-28"
-                        required></textarea>
-                    <button id="aiChatSend" type="submit" aria-label="Gửi câu hỏi"
-                        class="w-10 h-10 shrink-0 rounded-xl bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50"><i
-                            class="fa-solid fa-paper-plane"></i></button>
+                <div class="flex items-end gap-2 rounded-2xl border border-slate-200 bg-slate-50 p-2 focus-within:border-blue-400 focus-within:ring-2 focus-within:ring-blue-100">
+                    <textarea id="aiChatInput" rows="1" maxlength="1500" aria-label="Nhập câu hỏi" placeholder="Nhập câu hỏi bài tập Toán..." class="flex-1 resize-none bg-transparent px-2 py-2 text-sm outline-none max-h-28" required></textarea>
+                    <button id="aiChatSend" type="submit" aria-label="Gửi câu hỏi" class="w-10 h-10 shrink-0 rounded-xl bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50"><i class="fa-solid fa-paper-plane"></i></button>
                 </div>
             </form>
         </section>
 
         <!-- NÚT BẤM XẾP DỌC GÓC DƯỚI -->
         <div class="flex flex-col items-end gap-2">
-            <section id="eduWhiteboardPanel"
-                class="hidden bg-white rounded-2xl border border-slate-200 shadow-2xl overflow-hidden"
-                aria-label="Bảng trắng">
-                <div
-                    class="px-3 py-2.5 bg-gradient-to-r from-slate-800 to-slate-700 text-white flex items-center justify-between gap-2">
+            <section id="eduWhiteboardPanel" class="hidden bg-white rounded-2xl border border-slate-200 shadow-2xl overflow-hidden" aria-label="Bảng trắng">
+                <div class="px-3 py-2.5 bg-gradient-to-r from-slate-800 to-slate-700 text-white flex items-center justify-between gap-2">
                     <div class="flex items-center gap-2"><i class="fa-solid fa-chalkboard text-emerald-300"></i>
                         <div>
                             <h3 class="font-bold text-sm">Whiteboard</h3>
@@ -3301,81 +3059,49 @@
                         </div>
                     </div>
                     <div class="flex items-center gap-1">
-                        <button type="button" id="wbFullscreenBtn" onclick="toggleWhiteboardFullscreen()"
-                            title="Phóng to toàn màn hình" aria-label="Phóng to toàn màn hình"
-                            class="w-8 h-8 rounded-lg hover:bg-white/15"><i class="fa-solid fa-expand"></i></button>
-                        <button type="button" onclick="toggleEduWhiteboard(false)" aria-label="Đóng bảng trắng"
-                            class="w-7 h-7 rounded-lg hover:bg-white/15"><i class="fa-solid fa-xmark"></i></button>
+                        <button type="button" id="wbFullscreenBtn" onclick="toggleWhiteboardFullscreen()" title="Phóng to toàn màn hình" aria-label="Phóng to toàn màn hình" class="w-8 h-8 rounded-lg hover:bg-white/15"><i class="fa-solid fa-expand"></i></button>
+                        <button type="button" onclick="toggleEduWhiteboard(false)" aria-label="Đóng bảng trắng" class="w-7 h-7 rounded-lg hover:bg-white/15"><i class="fa-solid fa-xmark"></i></button>
                     </div>
                 </div>
                 <div class="px-3 py-2 flex flex-wrap items-center gap-2 border-b border-slate-200 bg-slate-50">
-                    <button type="button" id="wbPenBtn" onclick="setWhiteboardTool('pen')"
-                        class="wb-tool active px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold"><i
-                            class="fa-solid fa-pen mr-1"></i>Vẽ</button>
-                    <button type="button" id="wbEraserBtn" onclick="setWhiteboardTool('eraser')"
-                        class="wb-tool px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold"><i
-                            class="fa-solid fa-eraser mr-1"></i>Tẩy</button>
-                    <button type="button" id="wbPanBtn" onclick="setWhiteboardTool('pan')"
-                        class="wb-tool px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold"
-                        title="Giữ chuột trái, chuột phải/giữa hoặc phím Space để kéo bảng"><i
-                            class="fa-solid fa-hand mr-1"></i>Kéo bảng</button>
-                    <button type="button" onclick="expandEduWhiteboardCanvas()" class="wb-file"
-                        title="Mở rộng thêm diện tích viết"><i
-                            class="fa-solid fa-up-right-and-down-left-from-center mr-1"></i>+ Trang viết</button>
-                    <label class="flex items-center gap-1.5 text-xs text-slate-600 font-semibold">Màu <input
-                            id="wbColor" type="color" value="#1e293b"
-                            class="w-7 h-7 border-0 bg-transparent cursor-pointer" aria-label="Màu nét vẽ"></label>
-                    <label class="flex items-center gap-1.5 text-xs text-slate-600 font-semibold">Nét <input id="wbSize"
-                            type="range" min="1" max="18" value="3" class="w-16" aria-label="Độ dày nét vẽ"></label>
+                    <button type="button" id="wbPenBtn" onclick="setWhiteboardTool('pen')" class="wb-tool active px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold"><i class="fa-solid fa-pen mr-1"></i>Vẽ</button>
+                    <button type="button" id="wbEraserBtn" onclick="setWhiteboardTool('eraser')" class="wb-tool px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold"><i class="fa-solid fa-eraser mr-1"></i>Tẩy</button>
+                    <button type="button" id="wbPanBtn" onclick="setWhiteboardTool('pan')" class="wb-tool px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold" title="Giữ chuột trái, chuột phải/giữa hoặc phím Space để kéo bảng"><i class="fa-solid fa-hand mr-1"></i>Kéo bảng</button>
+                    <button type="button" onclick="expandEduWhiteboardCanvas()" class="wb-file" title="Mở rộng thêm diện tích viết"><i class="fa-solid fa-up-right-and-down-left-from-center mr-1"></i>+ Trang viết</button>
+                    <label class="flex items-center gap-1.5 text-xs text-slate-600 font-semibold">Màu <input id="wbColor" type="color" value="#1e293b" class="w-7 h-7 border-0 bg-transparent cursor-pointer" aria-label="Màu nét vẽ"></label>
+                    <label class="flex items-center gap-1.5 text-xs text-slate-600 font-semibold">Nét <input id="wbSize" type="range" min="1" max="18" value="3" class="w-16" aria-label="Độ dày nét vẽ"></label>
                     <span class="h-5 w-px bg-slate-300 mx-1"></span>
                     <label class="text-xs font-semibold text-slate-600">Lưới
-                        <select id="wbGridType" onchange="updateWhiteboardGrid()"
-                            class="ml-1 rounded-lg border border-slate-300 px-1.5 py-1 text-xs">
+                        <select id="wbGridType" onchange="updateWhiteboardGrid()" class="ml-1 rounded-lg border border-slate-300 px-1.5 py-1 text-xs">
                             <option value="square">Ô vuông</option>
                             <option value="lines">Dòng kẻ</option>
                             <option value="dots">Chấm</option>
                             <option value="none">Tắt</option>
                         </select>
                     </label>
-                    <label class="text-xs font-semibold text-slate-600">Màu lưới <input id="wbGridColor" type="color"
-                            value="#bfdbfe" onchange="updateWhiteboardGrid()" class="w-6 h-6 align-middle"></label>
-                    <label class="text-xs font-semibold text-slate-600">Ô <input id="wbGridSpacing" type="range"
-                            min="12" max="48" step="2" value="24" oninput="updateWhiteboardGrid()"
-                            class="w-14 align-middle"></label>
+                    <label class="text-xs font-semibold text-slate-600">Màu lưới <input id="wbGridColor" type="color" value="#bfdbfe" onchange="updateWhiteboardGrid()" class="w-6 h-6 align-middle"></label>
+                    <label class="text-xs font-semibold text-slate-600">Ô <input id="wbGridSpacing" type="range" min="12" max="48" step="2" value="24" oninput="updateWhiteboardGrid()" class="w-14 align-middle"></label>
                     <div class="flex items-center gap-1 ml-auto">
-                        <button type="button" onclick="changeWhiteboardZoom(-0.1)" class="wb-mini"
-                            title="Thu nhỏ">−</button>
+                        <button type="button" onclick="changeWhiteboardZoom(-0.1)" class="wb-mini" title="Thu nhỏ">−</button>
                         <span id="wbZoomLabel" class="text-xs font-bold text-slate-600 min-w-10 text-center">100%</span>
-                        <button type="button" onclick="changeWhiteboardZoom(0.1)" class="wb-mini"
-                            title="Phóng to">+</button>
-                        <button type="button" onclick="resetWhiteboardZoom()" class="wb-mini" title="Vừa khung"><i
-                                class="fa-solid fa-expand"></i></button>
+                        <button type="button" onclick="changeWhiteboardZoom(0.1)" class="wb-mini" title="Phóng to">+</button>
+                        <button type="button" onclick="resetWhiteboardZoom()" class="wb-mini" title="Vừa khung"><i class="fa-solid fa-expand"></i></button>
                     </div>
                 </div>
                 <div class="px-3 py-2 flex flex-wrap items-center gap-2 border-b border-slate-200 bg-white">
-                    <button type="button" onclick="saveEduWhiteboard()" class="wb-file"><i
-                            class="fa-solid fa-floppy-disk mr-1"></i>Lưu bảng</button>
-                    <button type="button" onclick="document.getElementById('wbImportFile').click()" class="wb-file"><i
-                            class="fa-solid fa-folder-open mr-1"></i>Mở tệp</button>
-                    <input id="wbImportFile" type="file" accept=".json,.wbink,.png,.jpg,.jpeg,.webp" class="hidden"
-                        onchange="loadEduWhiteboardFile(event)">
-                    <button type="button" onclick="exportEduWhiteboardImage()" class="wb-file"><i
-                            class="fa-solid fa-image mr-1"></i>Tải PNG</button>
-                    <button type="button" onclick="printEduWhiteboardPDF()" class="wb-file"><i
-                            class="fa-solid fa-file-pdf mr-1"></i>In / PDF</button>
-                    <button type="button" onclick="clearEduWhiteboard()"
-                        class="ml-auto px-2.5 py-1.5 rounded-lg bg-rose-50 text-rose-600 hover:bg-rose-100 text-xs font-bold"><i
-                            class="fa-solid fa-trash-can mr-1"></i>Xóa bảng</button>
+                    <button type="button" onclick="saveEduWhiteboard()" class="wb-file"><i class="fa-solid fa-floppy-disk mr-1"></i>Lưu bảng</button>
+                    <button type="button" onclick="document.getElementById('wbImportFile').click()" class="wb-file"><i class="fa-solid fa-folder-open mr-1"></i>Mở tệp</button>
+                    <input id="wbImportFile" type="file" accept=".json,.wbink,.png,.jpg,.jpeg,.webp" class="hidden" onchange="loadEduWhiteboardFile(event)">
+                    <button type="button" onclick="exportEduWhiteboardImage()" class="wb-file"><i class="fa-solid fa-image mr-1"></i>Tải PNG</button>
+                    <button type="button" onclick="printEduWhiteboardPDF()" class="wb-file"><i class="fa-solid fa-file-pdf mr-1"></i>In / PDF</button>
+                    <button type="button" onclick="clearEduWhiteboard()" class="ml-auto px-2.5 py-1.5 rounded-lg bg-rose-50 text-rose-600 hover:bg-rose-100 text-xs font-bold"><i class="fa-solid fa-trash-can mr-1"></i>Xóa bảng</button>
                 </div>
                 <div id="wbCanvasViewport" class="wb-canvas-viewport">
-                    <canvas id="eduWhiteboardCanvas" width="2400" height="1600"
-                        aria-label="Vùng vẽ bảng trắng"></canvas>
+                    <canvas id="eduWhiteboardCanvas" width="2400" height="1600" aria-label="Vùng vẽ bảng trắng"></canvas>
                 </div>
             </section>
 
-            <button id="aiChatToggle" type="button" onclick="toggleAIChat()" aria-label="Mở trợ lý học tập AI"
-                aria-expanded="false"
-                class="flex items-center gap-2 rounded-full bg-indigo-600 text-white px-4 py-2.5 text-sm font-semibold shadow-xl shadow-indigo-600/30 hover:bg-indigo-700 hover:-translate-y-0.5 transition">
+            <button id="aiChatToggle" type="button" onclick="toggleAIChat()" aria-label="Mở trợ lý học tập AI" aria-expanded="false" class="flex items-center gap-2 rounded-full bg-indigo-600 text-white px-4 py-2.5 text-sm font-semibold shadow-xl shadow-indigo-600/30 hover:bg-indigo-700 hover:-translate-y-0.5 transition">
                 <i class="fa-solid fa-comments text-lg"></i>
                 <span>Hỏi trợ lý AI</span>
             </button>
@@ -3383,13 +3109,9 @@
     </div>
 
     <!-- MODAL VẼ ĐỒ THỊ & HÌNH HỌC (TỰ TAY VẼ GEOGEBRA) -->
-    <div id="graphModal"
-        class="fixed inset-0 z-[85] hidden items-center justify-center bg-slate-950/70 backdrop-blur-sm p-2 sm:p-4"
-        role="dialog" aria-modal="true" aria-labelledby="graphModalTitle">
-        <div
-            class="bg-white w-full max-w-[1540px] h-[96vh] rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col">
-            <div
-                class="flex flex-wrap items-center justify-between gap-2 px-4 sm:px-5 py-2.5 bg-gradient-to-r from-violet-700 to-indigo-700 text-white shrink-0">
+    <div id="graphModal" class="fixed inset-0 z-[85] hidden items-center justify-center bg-slate-950/70 backdrop-blur-sm p-2 sm:p-4" role="dialog" aria-modal="true" aria-labelledby="graphModalTitle">
+        <div class="bg-white w-full max-w-[1540px] h-[96vh] rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col">
+            <div class="flex flex-wrap items-center justify-between gap-2 px-4 sm:px-5 py-2.5 bg-gradient-to-r from-violet-700 to-indigo-700 text-white shrink-0">
                 <div class="flex items-center gap-3">
                     <div>
                         <h3 id="graphModalTitle" class="font-bold text-base sm:text-lg flex items-center gap-2">
@@ -3413,13 +3135,10 @@
                 </div>
 
                 <div class="flex items-center gap-2">
-                    <button type="button" id="graphCasioToggleBtn" onclick="toggleCasioWidget()"
-                        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/15 hover:bg-white/25 text-xs font-semibold transition"
-                        title="Bấm để bật / tắt máy tính Casio fx-580VN X">
+                    <button type="button" id="graphCasioToggleBtn" onclick="toggleCasioWidget()" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/15 hover:bg-white/25 text-xs font-semibold transition" title="Bấm để bật / tắt máy tính Casio fx-580VN X">
                         <i class="fa-solid fa-calculator"></i> Casio Fx
                     </button>
-                    <button type="button" onclick="closeGraphModal()"
-                        class="w-9 h-9 rounded-xl hover:bg-white/15 flex items-center justify-center" aria-label="Đóng">
+                    <button type="button" onclick="closeGraphModal()" class="w-9 h-9 rounded-xl hover:bg-white/15 flex items-center justify-center" aria-label="Đóng">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
@@ -3431,31 +3150,23 @@
 
                     <!-- PANEL 1: ĐỒ THỊ HÀM SỐ 2D -->
                     <div id="panelMode2D" class="flex flex-col">
-                        <div
-                            class="p-3 border-b border-slate-200 flex items-center justify-between sticky top-0 bg-slate-50 z-10">
+                        <div class="p-3 border-b border-slate-200 flex items-center justify-between sticky top-0 bg-slate-50 z-10">
                             <div>
                                 <h4 class="font-bold text-slate-800 text-sm">Phương trình hàm số</h4>
                                 <p class="text-[11px] text-slate-500">Tự động hiển thị x², phân số chuẩn bên dưới</p>
                             </div>
-                            <button type="button" onclick="addGraphExpression()"
-                                class="px-3 py-2 rounded-lg bg-violet-600 text-white text-xs font-semibold hover:bg-violet-700 shadow-sm">
+                            <button type="button" onclick="addGraphExpression()" class="px-3 py-2 rounded-lg bg-violet-600 text-white text-xs font-semibold hover:bg-violet-700 shadow-sm">
                                 <i class="fa-solid fa-plus mr-1"></i>Thêm dòng
                             </button>
                         </div>
 
                         <div id="graphExpressionList" class="p-3 space-y-2.5">
-                            <div
-                                class="graph-expression-row bg-white border border-violet-200 rounded-xl p-2.5 shadow-sm">
+                            <div class="graph-expression-row bg-white border border-violet-200 rounded-xl p-2.5 shadow-sm">
                                 <div class="flex items-center gap-2">
                                     <span class="w-2.5 h-2.5 rounded-full bg-violet-600 shrink-0"></span>
                                     <span class="text-xs font-bold text-slate-500">y =</span>
-                                    <input
-                                        class="graph-expression-input min-w-0 flex-1 outline-none text-sm font-medium text-slate-800"
-                                        value="x^2" aria-label="Phương trình 1" oninput="updateMathPreview(this)"
-                                        onkeydown="if(event.key==='Enter')drawFunctionGraph()">
-                                    <button type="button" onclick="removeGraphExpression(this)"
-                                        class="text-slate-400 hover:text-rose-600 px-1" title="Xóa dòng"><i
-                                            class="fa-solid fa-xmark"></i></button>
+                                    <input class="graph-expression-input min-w-0 flex-1 outline-none text-sm font-medium text-slate-800" value="x^2" aria-label="Phương trình 1" oninput="updateMathPreview(this)" onkeydown="if(event.key==='Enter')drawFunctionGraph()">
+                                    <button type="button" onclick="removeGraphExpression(this)" class="text-slate-400 hover:text-rose-600 px-1" title="Xóa dòng"><i class="fa-solid fa-xmark"></i></button>
                                 </div>
                                 <div class="math-pretty-preview" title="Hiển thị công thức trực quan">y = x<sup>2</sup>
                                 </div>
@@ -3464,8 +3175,7 @@
 
                         <div class="px-3 pb-2 pt-1 flex items-center justify-between gap-2">
                             <span class="text-xs font-semibold text-slate-600">Bàn phím toán học</span>
-                            <button type="button" onclick="clearGraphInput()"
-                                class="text-[11px] text-rose-600 hover:underline font-medium">Xóa ô đang chọn</button>
+                            <button type="button" onclick="clearGraphInput()" class="text-[11px] text-rose-600 hover:underline font-medium">Xóa ô đang chọn</button>
                         </div>
 
                         <div class="px-3 pb-3">
@@ -3473,14 +3183,10 @@
                                 <button type="button" onclick="insertGraphKey('x')" class="graph-key">x</button>
                                 <button type="button" onclick="insertGraphKey('pi')" class="graph-key">π</button>
                                 <button type="button" onclick="insertGraphKey('e')" class="graph-key">e</button>
-                                <button type="button" onclick="insertGraphKey('^2')"
-                                    class="graph-key text-indigo-700">x<sup>2</sup></button>
-                                <button type="button" onclick="insertGraphKey('^3')"
-                                    class="graph-key text-indigo-700">x<sup>3</sup></button>
+                                <button type="button" onclick="insertGraphKey('^2')" class="graph-key text-indigo-700">x<sup>2</sup></button>
+                                <button type="button" onclick="insertGraphKey('^3')" class="graph-key text-indigo-700">x<sup>3</sup></button>
 
-                                <button type="button" onclick="insertGraphFraction()"
-                                    class="graph-key bg-indigo-50 border-indigo-200 text-indigo-700 font-bold"
-                                    title="Chèn mẫu phân số (tử)/(mẫu)">
+                                <button type="button" onclick="insertGraphFraction()" class="graph-key bg-indigo-50 border-indigo-200 text-indigo-700 font-bold" title="Chèn mẫu phân số (tử)/(mẫu)">
                                     <span class="inline-flex flex-col items-center leading-none text-[11px]">
                                         <span class="border-b border-indigo-700 px-1">□</span>
                                         <span class="px-1 pt-0.5">□</span>
@@ -3488,8 +3194,7 @@
                                 </button>
                                 <button type="button" onclick="insertGraphKey('sqrt(')" class="graph-key">√□</button>
                                 <button type="button" onclick="insertGraphKey('abs(')" class="graph-key">|x|</button>
-                                <button type="button" onclick="insertGraphKey('^(')"
-                                    class="graph-key">x<sup>□</sup></button>
+                                <button type="button" onclick="insertGraphKey('^(')" class="graph-key">x<sup>□</sup></button>
                                 <button type="button" onclick="insertGraphKey('/')" class="graph-key">÷</button>
 
                                 <button type="button" onclick="insertGraphKey('sin(')" class="graph-key">sin</button>
@@ -3514,36 +3219,23 @@
                                 <button type="button" onclick="insertGraphKey('2')" class="graph-key">2</button>
                                 <button type="button" onclick="insertGraphKey('3')" class="graph-key">3</button>
                                 <button type="button" onclick="insertGraphKey('+')" class="graph-key">+</button>
-                                <button type="button" onclick="graphBackspace()" class="graph-key graph-key-muted"><i
-                                        class="fa-solid fa-delete-left"></i></button>
+                                <button type="button" onclick="graphBackspace()" class="graph-key graph-key-muted"><i class="fa-solid fa-delete-left"></i></button>
 
-                                <button type="button" onclick="insertGraphKey('0')"
-                                    class="graph-key col-span-2">0</button>
+                                <button type="button" onclick="insertGraphKey('0')" class="graph-key col-span-2">0</button>
                                 <button type="button" onclick="insertGraphKey('.')" class="graph-key">.</button>
-                                <button type="button" onclick="insertGraphKey('1/x')"
-                                    class="graph-key text-xs">1/x</button>
-                                <button type="button" onclick="drawFunctionGraph()"
-                                    class="graph-key graph-key-primary"><i class="fa-solid fa-check"></i></button>
+                                <button type="button" onclick="insertGraphKey('1/x')" class="graph-key text-xs">1/x</button>
+                                <button type="button" onclick="drawFunctionGraph()" class="graph-key graph-key-primary"><i class="fa-solid fa-check"></i></button>
                             </div>
                         </div>
 
                         <div class="p-3 border-t border-slate-200 bg-white space-y-2">
                             <div class="grid grid-cols-2 gap-2">
-                                <label class="text-[11px] text-slate-500">x nhỏ nhất<input id="graphXMin" type="number"
-                                        value="-10"
-                                        class="mt-1 w-full p-2 border rounded-lg text-sm text-slate-800"></label>
-                                <label class="text-[11px] text-slate-500">x lớn nhất<input id="graphXMax" type="number"
-                                        value="10"
-                                        class="mt-1 w-full p-2 border rounded-lg text-sm text-slate-800"></label>
-                                <label class="text-[11px] text-slate-500">y nhỏ nhất<input id="graphYMin" type="number"
-                                        value="-10"
-                                        class="mt-1 w-full p-2 border rounded-lg text-sm text-slate-800"></label>
-                                <label class="text-[11px] text-slate-500">y lớn nhất<input id="graphYMax" type="number"
-                                        value="10"
-                                        class="mt-1 w-full p-2 border rounded-lg text-sm text-slate-800"></label>
+                                <label class="text-[11px] text-slate-500">x nhỏ nhất<input id="graphXMin" type="number" value="-10" class="mt-1 w-full p-2 border rounded-lg text-sm text-slate-800"></label>
+                                <label class="text-[11px] text-slate-500">x lớn nhất<input id="graphXMax" type="number" value="10" class="mt-1 w-full p-2 border rounded-lg text-sm text-slate-800"></label>
+                                <label class="text-[11px] text-slate-500">y nhỏ nhất<input id="graphYMin" type="number" value="-10" class="mt-1 w-full p-2 border rounded-lg text-sm text-slate-800"></label>
+                                <label class="text-[11px] text-slate-500">y lớn nhất<input id="graphYMax" type="number" value="10" class="mt-1 w-full p-2 border rounded-lg text-sm text-slate-800"></label>
                             </div>
-                            <button type="button" onclick="drawFunctionGraph()"
-                                class="w-full py-2.5 rounded-xl bg-violet-600 text-white text-sm font-bold hover:bg-violet-700">
+                            <button type="button" onclick="drawFunctionGraph()" class="w-full py-2.5 rounded-xl bg-violet-600 text-white text-sm font-bold hover:bg-violet-700">
                                 <i class="fa-solid fa-chart-line mr-2"></i>Vẽ / cập nhật đồ thị
                             </button>
                         </div>
@@ -3560,20 +3252,16 @@
                         <div class="space-y-1.5">
                             <label class="text-xs font-bold text-slate-700">Mẫu hình học 2D nhanh:</label>
                             <div class="grid grid-cols-2 gap-1.5">
-                                <button type="button" onclick="loadGeom2DPreset('triangle')"
-                                    class="p-2 text-xs font-semibold bg-white border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50 rounded-xl text-left transition">
+                                <button type="button" onclick="loadGeom2DPreset('triangle')" class="p-2 text-xs font-semibold bg-white border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50 rounded-xl text-left transition">
                                     <i class="fa-solid fa-play -rotate-90 text-indigo-600 mr-1.5"></i>Tam giác ABC
                                 </button>
-                                <button type="button" onclick="loadGeom2DPreset('circle')"
-                                    class="p-2 text-xs font-semibold bg-white border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50 rounded-xl text-left transition">
+                                <button type="button" onclick="loadGeom2DPreset('circle')" class="p-2 text-xs font-semibold bg-white border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50 rounded-xl text-left transition">
                                     <i class="fa-regular fa-circle text-emerald-600 mr-1.5"></i>Đường tròn (I; R)
                                 </button>
-                                <button type="button" onclick="loadGeom2DPreset('square')"
-                                    class="p-2 text-xs font-semibold bg-white border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50 rounded-xl text-left transition">
+                                <button type="button" onclick="loadGeom2DPreset('square')" class="p-2 text-xs font-semibold bg-white border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50 rounded-xl text-left transition">
                                     <i class="fa-regular fa-square text-amber-600 mr-1.5"></i>Hình vuông ABCD
                                 </button>
-                                <button type="button" onclick="loadGeom2DPreset('ellipse')"
-                                    class="p-2 text-xs font-semibold bg-white border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50 rounded-xl text-left transition">
+                                <button type="button" onclick="loadGeom2DPreset('ellipse')" class="p-2 text-xs font-semibold bg-white border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50 rounded-xl text-left transition">
                                     <i class="fa-solid fa-egg text-rose-600 mr-1.5"></i>Elip (E)
                                 </button>
                             </div>
@@ -3582,10 +3270,8 @@
                         <div class="bg-white p-3 rounded-2xl border border-slate-200 space-y-2.5">
                             <label class="block text-xs font-bold text-slate-700">Tọa độ các điểm nối thành đa
                                 giác:</label>
-                            <p class="text-[11px] text-slate-500">Nhập dạng <code
-                                    class="bg-slate-100 px-1 rounded">A(0,0); B(4,0); C(2,3)</code></p>
-                            <textarea id="geom2DPointsInput" rows="2"
-                                class="w-full p-2 border border-slate-200 rounded-xl text-xs font-mono outline-none focus:border-indigo-500">A(-3, -2); B(4, -2); C(1, 4)</textarea>
+                            <p class="text-[11px] text-slate-500">Nhập dạng <code class="bg-slate-100 px-1 rounded">A(0,0); B(4,0); C(2,3)</code></p>
+                            <textarea id="geom2DPointsInput" rows="2" class="w-full p-2 border border-slate-200 rounded-xl text-xs font-mono outline-none focus:border-indigo-500">A(-3, -2); B(4, -2); C(1, 4)</textarea>
                             <label class="flex items-center gap-2 text-xs text-slate-700 cursor-pointer">
                                 <input id="geom2DClosePoly" type="checkbox" checked class="rounded text-indigo-600">
                                 <span>Nối khép kín đa giác &amp; tô màu diện tích</span>
@@ -3595,20 +3281,13 @@
                         <div class="bg-white p-3 rounded-2xl border border-slate-200 space-y-2">
                             <label class="block text-xs font-bold text-slate-700">Đường tròn bổ sung (Tùy chọn):</label>
                             <div class="grid grid-cols-3 gap-2">
-                                <label class="text-[11px] text-slate-500">Tâm x₀<input id="geom2DCircleX" type="number"
-                                        step="0.5" value="" placeholder="0"
-                                        class="mt-1 w-full p-1.5 border rounded-lg text-xs"></label>
-                                <label class="text-[11px] text-slate-500">Tâm y₀<input id="geom2DCircleY" type="number"
-                                        step="0.5" value="" placeholder="0"
-                                        class="mt-1 w-full p-1.5 border rounded-lg text-xs"></label>
-                                <label class="text-[11px] text-slate-500">Bán kính R<input id="geom2DCircleR"
-                                        type="number" step="0.5" min="0" value="" placeholder="3"
-                                        class="mt-1 w-full p-1.5 border rounded-lg text-xs"></label>
+                                <label class="text-[11px] text-slate-500">Tâm x₀<input id="geom2DCircleX" type="number" step="0.5" value="" placeholder="0" class="mt-1 w-full p-1.5 border rounded-lg text-xs"></label>
+                                <label class="text-[11px] text-slate-500">Tâm y₀<input id="geom2DCircleY" type="number" step="0.5" value="" placeholder="0" class="mt-1 w-full p-1.5 border rounded-lg text-xs"></label>
+                                <label class="text-[11px] text-slate-500">Bán kính R<input id="geom2DCircleR" type="number" step="0.5" min="0" value="" placeholder="3" class="mt-1 w-full p-1.5 border rounded-lg text-xs"></label>
                             </div>
                         </div>
 
-                        <button type="button" onclick="drawGeometry2D()"
-                            class="w-full py-2.5 rounded-xl bg-indigo-600 text-white text-sm font-bold hover:bg-indigo-700 shadow-md">
+                        <button type="button" onclick="drawGeometry2D()" class="w-full py-2.5 rounded-xl bg-indigo-600 text-white text-sm font-bold hover:bg-indigo-700 shadow-md">
                             <i class="fa-solid fa-draw-polygon mr-1.5"></i> Vẽ hình học 2D
                         </button>
                     </div>
@@ -3624,12 +3303,10 @@
                         <div class="bg-white p-3 rounded-2xl border border-slate-200 space-y-2">
                             <span class="block text-xs font-bold text-slate-700">Chế độ dựng hình GeoGebra:</span>
                             <div class="grid grid-cols-2 gap-1.5">
-                                <button type="button" id="ggbSubMode3D" onclick="switchEduGeoGebraApp('3d')"
-                                    class="p-2 text-xs font-bold bg-indigo-600 text-white rounded-xl transition">
+                                <button type="button" id="ggbSubMode3D" onclick="switchEduGeoGebraApp('3d')" class="p-2 text-xs font-bold bg-indigo-600 text-white rounded-xl transition">
                                     <i class="fa-solid fa-cube mr-1"></i>Không gian 3D
                                 </button>
-                                <button type="button" id="ggbSubMode2D" onclick="switchEduGeoGebraApp('geometry')"
-                                    class="p-2 text-xs font-bold bg-slate-100 hover:bg-indigo-50 text-slate-700 rounded-xl transition">
+                                <button type="button" id="ggbSubMode2D" onclick="switchEduGeoGebraApp('geometry')" class="p-2 text-xs font-bold bg-slate-100 hover:bg-indigo-50 text-slate-700 rounded-xl transition">
                                     <i class="fa-solid fa-shapes mr-1"></i>Hình phẳng 2D
                                 </button>
                             </div>
@@ -3638,23 +3315,18 @@
                         <div class="bg-white p-3 rounded-2xl border border-slate-200 space-y-2">
                             <span class="block text-xs font-bold text-slate-700">Điều khiển nhanh khung vẽ:</span>
                             <div class="grid grid-cols-2 gap-1.5 text-xs">
-                                <button type="button" onclick="eduGeoGebraCmd('SetAxesVisible(true,true,true)')"
-                                    class="p-2 bg-slate-50 hover:bg-indigo-50 border border-slate-200 rounded-xl font-semibold text-slate-700">Hiện
+                                <button type="button" onclick="eduGeoGebraCmd('SetAxesVisible(true,true,true)')" class="p-2 bg-slate-50 hover:bg-indigo-50 border border-slate-200 rounded-xl font-semibold text-slate-700">Hiện
                                     trục</button>
-                                <button type="button" onclick="eduGeoGebraCmd('SetAxesVisible(false,false,false)')"
-                                    class="p-2 bg-slate-50 hover:bg-indigo-50 border border-slate-200 rounded-xl font-semibold text-slate-700">Ẩn
+                                <button type="button" onclick="eduGeoGebraCmd('SetAxesVisible(false,false,false)')" class="p-2 bg-slate-50 hover:bg-indigo-50 border border-slate-200 rounded-xl font-semibold text-slate-700">Ẩn
                                     trục</button>
-                                <button type="button" onclick="eduGeoGebraCmd('ShowGrid(true)')"
-                                    class="p-2 bg-slate-50 hover:bg-indigo-50 border border-slate-200 rounded-xl font-semibold text-slate-700">Hiện
+                                <button type="button" onclick="eduGeoGebraCmd('ShowGrid(true)')" class="p-2 bg-slate-50 hover:bg-indigo-50 border border-slate-200 rounded-xl font-semibold text-slate-700">Hiện
                                     lưới</button>
-                                <button type="button" onclick="resetEduGeoGebra()"
-                                    class="p-2 bg-rose-50 hover:bg-rose-100 border border-rose-200 rounded-xl font-semibold text-rose-700">Làm
+                                <button type="button" onclick="resetEduGeoGebra()" class="p-2 bg-rose-50 hover:bg-rose-100 border border-rose-200 rounded-xl font-semibold text-rose-700">Làm
                                     mới hình</button>
                             </div>
                         </div>
 
-                        <div
-                            class="bg-indigo-50/80 border border-indigo-200 rounded-2xl p-3 text-xs space-y-1.5 text-indigo-950">
+                        <div class="bg-indigo-50/80 border border-indigo-200 rounded-2xl p-3 text-xs space-y-1.5 text-indigo-950">
                             <div class="font-bold text-indigo-800"><i class="fa-solid fa-circle-info mr-1"></i>Hướng dẫn
                                 tự vẽ theo đề bài:</div>
                             <p class="leading-relaxed text-slate-700">• Chọn công cụ <strong>Điểm, Đoạn thẳng, Đa giác,
@@ -3674,15 +3346,12 @@
                         <span id="graphCanvasHint"><i class="fa-solid fa-hand-pointer mr-1"></i>Kéo để di chuyển · Cuộn
                             để phóng to / thu nhỏ</span>
                         <div class="flex items-center gap-3">
-                            <button type="button" onclick="resetGraphView()"
-                                class="text-violet-700 font-semibold hover:underline">Đặt lại góc nhìn</button>
+                            <button type="button" onclick="resetGraphView()" class="text-violet-700 font-semibold hover:underline">Đặt lại góc nhìn</button>
                         </div>
                     </div>
-                    <div id="functionGraph"
-                        class="w-full flex-1 min-h-[330px] lg:min-h-0 rounded-xl border border-slate-200 bg-white">
+                    <div id="functionGraph" class="w-full flex-1 min-h-[330px] lg:min-h-0 rounded-xl border border-slate-200 bg-white">
                     </div>
-                    <div id="eduGeoGebraEmbed"
-                        class="hidden w-full flex-1 min-h-[420px] lg:min-h-0 rounded-xl border border-slate-200 bg-white overflow-hidden">
+                    <div id="eduGeoGebraEmbed" class="hidden w-full flex-1 min-h-[420px] lg:min-h-0 rounded-xl border border-slate-200 bg-white overflow-hidden">
                     </div>
                     <p id="graphFooterNote" class="text-[10px] text-slate-400 pt-2">Hỗ trợ x², phân số a/b, sin, cos,
                         tan, sqrt, log, ln, abs. Nhấn nút máy ảnh trên góc phải biểu đồ để tải ảnh PNG.</p>
@@ -3692,15 +3361,12 @@
     </div>
 
     <!-- MODAL CHÚC MỪNG KẾT QUẢ TRẮC NGHIỆM -->
-    <div id="quizResultModal"
-        class="fixed inset-0 z-[70] hidden flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+    <div id="quizResultModal" class="fixed inset-0 z-[70] hidden flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
         <div class="bg-white w-full max-w-md rounded-3xl p-6 sm:p-8 shadow-2xl relative text-center space-y-5">
-            <button type="button" onclick="closeQuizResultModal()"
-                class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 w-9 h-9 rounded-full hover:bg-slate-100 flex items-center justify-center text-xl transition">
+            <button type="button" onclick="closeQuizResultModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 w-9 h-9 rounded-full hover:bg-slate-100 flex items-center justify-center text-xl transition">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            <div id="resultIconBox"
-                class="w-20 h-20 rounded-full bg-amber-100 text-amber-500 flex items-center justify-center mx-auto text-4xl shadow-inner">
+            <div id="resultIconBox" class="w-20 h-20 rounded-full bg-amber-100 text-amber-500 flex items-center justify-center mx-auto text-4xl shadow-inner">
                 <i class="fa-solid fa-trophy"></i>
             </div>
             <div class="space-y-2">
@@ -3710,8 +3376,7 @@
                     nhận vào tiến độ học tập.</p>
             </div>
             <div class="pt-2">
-                <button type="button" onclick="closeQuizResultModal()"
-                    class="w-full py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition shadow-lg shadow-blue-500/20 text-sm">
+                <button type="button" onclick="closeQuizResultModal()" class="w-full py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition shadow-lg shadow-blue-500/20 text-sm">
                     Xem chi tiết từng câu &amp; Bài giải
                 </button>
             </div>
@@ -3719,13 +3384,9 @@
     </div>
 
     <!-- MODAL QUẢN LÝ TÀI KHOẢN -->
-    <div id="accountModal"
-        class="fixed inset-0 z-[80] hidden items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4"
-        role="dialog" aria-modal="true" aria-labelledby="accountModalTitle">
-        <div
-            class="bg-white w-full max-w-lg rounded-3xl p-6 sm:p-8 shadow-2xl relative space-y-5 max-h-[90vh] overflow-y-auto">
-            <button type="button" onclick="closeAccountModal()" aria-label="Đóng cửa sổ"
-                class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 w-9 h-9 rounded-full hover:bg-slate-100 flex items-center justify-center text-xl transition">
+    <div id="accountModal" class="fixed inset-0 z-[80] hidden items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-labelledby="accountModalTitle">
+        <div class="bg-white w-full max-w-lg rounded-3xl p-6 sm:p-8 shadow-2xl relative space-y-5 max-h-[90vh] overflow-y-auto">
+            <button type="button" onclick="closeAccountModal()" aria-label="Đóng cửa sổ" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 w-9 h-9 rounded-full hover:bg-slate-100 flex items-center justify-center text-xl transition">
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <div class="space-y-1">
@@ -3734,66 +3395,54 @@
                 <p class="text-sm text-slate-500">Cập nhật ảnh đại diện và thông tin hiển thị của bạn.</p>
             </div>
             <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                <div id="accountAvatarPreview"
-                    class="w-20 h-20 rounded-full bg-blue-600 text-white flex items-center justify-center text-2xl font-bold overflow-hidden shrink-0 shadow-md">
+                <div id="accountAvatarPreview" class="w-20 h-20 rounded-full bg-blue-600 text-white flex items-center justify-center text-2xl font-bold overflow-hidden shrink-0 shadow-md">
                     U</div>
                 <div class="min-w-0 flex-1 space-y-2">
                     <p class="font-bold text-slate-800">Ảnh đại diện</p>
                     <p class="text-xs text-slate-500">Chọn ảnh JPG, PNG hoặc WebP (tối đa 5 MB).</p>
-                    <label for="accountAvatarFile"
-                        class="inline-flex cursor-pointer items-center gap-2 px-3 py-2 rounded-xl bg-blue-600 text-white text-xs font-bold hover:bg-blue-700 transition">
+                    <label for="accountAvatarFile" class="inline-flex cursor-pointer items-center gap-2 px-3 py-2 rounded-xl bg-blue-600 text-white text-xs font-bold hover:bg-blue-700 transition">
                         <i class="fa-solid fa-camera"></i> Chọn ảnh
                     </label>
-                    <input id="accountAvatarFile" type="file" accept="image/png,image/jpeg,image/webp" class="hidden"
-                        onchange="previewAccountAvatar(event)">
-                    <button type="button" onclick="removeAccountAvatar()"
-                        class="ml-2 text-xs font-semibold text-rose-600 hover:text-rose-700">Gỡ ảnh</button>
+                    <input id="accountAvatarFile" type="file" accept="image/png,image/jpeg,image/webp" class="hidden" onchange="previewAccountAvatar(event)">
+                    <button type="button" onclick="removeAccountAvatar()" class="ml-2 text-xs font-semibold text-rose-600 hover:text-rose-700">Gỡ ảnh</button>
                 </div>
             </div>
             <form id="accountForm" class="space-y-4" onsubmit="saveAccountProfile(event)">
                 <div>
                     <label for="accountNameInput" class="block text-xs font-semibold text-slate-700 mb-1.5">Tên hiển
                         thị</label>
-                    <input id="accountNameInput" type="text" maxlength="60" required
-                        class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-blue-500 focus:bg-white transition">
+                    <input id="accountNameInput" type="text" maxlength="60" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-blue-500 focus:bg-white transition">
                 </div>
                 <div>
                     <label for="accountEmailInput" class="block text-xs font-semibold text-slate-700 mb-1.5">Email tài
                         khoản</label>
-                    <input id="accountEmailInput" type="email" readonly
-                        class="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded-xl text-sm text-slate-500 outline-none cursor-not-allowed">
+                    <input id="accountEmailInput" type="email" readonly class="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded-xl text-sm text-slate-500 outline-none cursor-not-allowed">
                     <p class="text-[11px] text-slate-400 mt-1">Email hiện chỉ dùng để nhận diện tài khoản và không thể
                         sửa tại đây.</p>
                 </div>
                 <div>
                     <label for="accountRoleInput" class="block text-xs font-semibold text-slate-700 mb-1.5">Vai
                         trò</label>
-                    <input id="accountRoleInput" type="text" readonly
-                        class="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded-xl text-sm text-slate-500 outline-none cursor-not-allowed">
+                    <input id="accountRoleInput" type="text" readonly class="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded-xl text-sm text-slate-500 outline-none cursor-not-allowed">
                 </div>
                 <div>
                     <label for="accountSchoolInput" class="block text-xs font-semibold text-slate-700 mb-1.5">Trường
                         học</label>
-                    <input id="accountSchoolInput" type="text" maxlength="120" placeholder="Nhập tên trường của bạn"
-                        class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-blue-500 focus:bg-white transition">
+                    <input id="accountSchoolInput" type="text" maxlength="120" placeholder="Nhập tên trường của bạn" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-blue-500 focus:bg-white transition">
                 </div>
                 <div>
                     <label for="accountClassInput" class="block text-xs font-semibold text-slate-700 mb-1.5">Lớp</label>
-                    <input id="accountClassInput" type="text" maxlength="30" placeholder="Ví dụ: 12A1"
-                        class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-blue-500 focus:bg-white transition">
+                    <input id="accountClassInput" type="text" maxlength="30" placeholder="Ví dụ: 12A1" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-blue-500 focus:bg-white transition">
                 </div>
                 <div class="flex flex-col-reverse sm:flex-row gap-3 pt-2">
-                    <button type="button" onclick="closeAccountModal()"
-                        class="flex-1 py-3 bg-slate-100 text-slate-700 rounded-xl font-semibold hover:bg-slate-200 transition text-sm">Hủy</button>
-                    <button type="submit"
-                        class="flex-1 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-500/20 text-sm">
+                    <button type="button" onclick="closeAccountModal()" class="flex-1 py-3 bg-slate-100 text-slate-700 rounded-xl font-semibold hover:bg-slate-200 transition text-sm">Hủy</button>
+                    <button type="submit" class="flex-1 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-500/20 text-sm">
                         <i class="fa-solid fa-floppy-disk mr-1"></i> Lưu thay đổi
                     </button>
                 </div>
             </form>
             <div class="border-t border-slate-100 pt-4">
-                <button type="button" onclick="accountModalLogout()"
-                    class="w-full py-3 rounded-xl border border-rose-200 text-rose-600 hover:bg-rose-50 font-semibold text-sm transition">
+                <button type="button" onclick="accountModalLogout()" class="w-full py-3 rounded-xl border border-rose-200 text-rose-600 hover:bg-rose-50 font-semibold text-sm transition">
                     <i class="fa-solid fa-right-from-bracket mr-2"></i>Đăng xuất tài khoản
                 </button>
             </div>
@@ -3803,148 +3452,113 @@
     </div>
 
     <!-- MODAL ĐĂNG NHẬP / ĐĂNG KÝ -->
-    <div id="loginModal"
-        class="fixed inset-0 z-50 hidden flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+    <div id="loginModal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
         <div class="bg-white w-full max-w-md rounded-3xl p-6 sm:p-8 shadow-2xl relative space-y-6">
-            <button type="button" onclick="closeLoginModal()"
-                class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 w-9 h-9 rounded-full hover:bg-slate-100 flex items-center justify-center text-xl transition">
+            <button type="button" onclick="closeLoginModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 w-9 h-9 rounded-full hover:bg-slate-100 flex items-center justify-center text-xl transition">
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <div class="text-center space-y-2">
-                <div
-                    class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mx-auto text-xl font-bold">
+                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mx-auto text-xl font-bold">
                     EL</div>
                 <h3 class="text-2xl font-extrabold text-slate-900">Đăng Nhập EduLearn</h3>
             </div>
             <form class="space-y-4" onsubmit="handleLogin(event)">
-                <input type="text" id="loginUsername" placeholder="Tên đăng nhập / Email" required
-                    class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-blue-500">
-                <input type="password" placeholder="Mật khẩu" required
-                    class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-blue-500">
-                <button type="submit"
-                    class="w-full py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition text-sm">Đăng
+                <input type="text" id="loginUsername" placeholder="Tên đăng nhập / Email" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-blue-500">
+                <input type="password" placeholder="Mật khẩu" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-blue-500">
+                <button type="submit" class="w-full py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition text-sm">Đăng
                     Nhập</button>
             </form>
         </div>
     </div>
 
-    <div id="registerModal"
-        class="fixed inset-0 z-50 hidden flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+    <div id="registerModal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
         <div class="bg-white w-full max-w-md rounded-3xl p-6 sm:p-8 shadow-2xl relative space-y-5">
-            <button type="button" onclick="closeRegisterModal()"
-                class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 w-9 h-9 rounded-full hover:bg-slate-100 flex items-center justify-center text-xl transition">
+            <button type="button" onclick="closeRegisterModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 w-9 h-9 rounded-full hover:bg-slate-100 flex items-center justify-center text-xl transition">
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <div class="text-center space-y-1">
-                <div
-                    class="w-12 h-12 bg-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto text-xl font-bold">
+                <div class="w-12 h-12 bg-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto text-xl font-bold">
                     EL</div>
                 <h3 class="text-2xl font-extrabold text-slate-900">Tạo Tài Khoản</h3>
             </div>
             <form class="space-y-3" onsubmit="handleRegister(event)">
-                <input type="text" id="regFullName" placeholder="Họ và tên" required
-                    class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-blue-500">
-                <input type="email" placeholder="Email" required
-                    class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-blue-500">
-                <input type="password" placeholder="Mật khẩu" required
-                    class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-blue-500">
+                <input type="text" id="regFullName" placeholder="Họ và tên" required class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-blue-500">
+                <input type="email" placeholder="Email" required class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-blue-500">
+                <input type="password" placeholder="Mật khẩu" required class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none focus:border-blue-500">
                 <div class="text-left">
                     <label class="block text-xs font-semibold text-slate-600 mb-1">Bạn là:</label>
-                    <select id="regRole"
-                        class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none font-medium text-slate-700 focus:border-blue-500">
+                    <select id="regRole" class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none font-medium text-slate-700 focus:border-blue-500">
                         <option value="student">🎓 Học sinh</option>
                         <option value="teacher">👨‍🏫 Giáo viên</option>
                     </select>
                 </div>
-                <button type="submit"
-                    class="w-full py-3 bg-slate-900 text-white font-semibold rounded-xl hover:bg-slate-800 transition text-sm">Đăng
+                <button type="submit" class="w-full py-3 bg-slate-900 text-white font-semibold rounded-xl hover:bg-slate-800 transition text-sm">Đăng
                     Ký</button>
             </form>
         </div>
     </div>
 
     <!-- Modal Chỉnh Sửa Bài Giảng -->
-    <div id="editLessonModal"
-        class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden p-4">
+    <div id="editLessonModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden p-4">
         <div class="bg-white w-full max-w-lg p-6 rounded-2xl shadow-xl space-y-4 relative">
             <div class="flex justify-between items-center border-b pb-3">
                 <h3 class="text-lg font-bold text-slate-800">Chỉnh sửa bài giảng</h3>
-                <button type="button" onclick="closeEditLessonModal()"
-                    class="text-slate-400 hover:text-slate-600 font-bold text-xl">&times;</button>
+                <button type="button" onclick="closeEditLessonModal()" class="text-slate-400 hover:text-slate-600 font-bold text-xl">&times;</button>
             </div>
             <input type="hidden" id="editLessonId">
             <div class="space-y-3">
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-1">Tên bài giảng</label>
-                    <input type="text" id="editLessonTitle"
-                        class="w-full px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600"
-                        placeholder="Tên bài giảng...">
+                    <input type="text" id="editLessonTitle" class="w-full px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder="Tên bài giảng...">
                 </div>
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-1">Đường link Video
                         (YouTube/MP4)</label>
-                    <input type="url" id="editLessonSrc"
-                        class="w-full px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600"
-                        placeholder="https://www.youtube.com/watch?v=...">
+                    <input type="url" id="editLessonSrc" class="w-full px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder="https://www.youtube.com/watch?v=...">
                 </div>
             </div>
             <div class="flex justify-end gap-3 pt-3 border-t">
-                <button type="button" onclick="closeEditLessonModal()"
-                    class="px-4 py-2 bg-slate-200 text-slate-700 rounded-xl hover:bg-slate-300 font-semibold text-sm">Hủy</button>
-                <button type="button" onclick="saveEditLesson()"
-                    class="px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 font-semibold text-sm">Lưu cập
+                <button type="button" onclick="closeEditLessonModal()" class="px-4 py-2 bg-slate-200 text-slate-700 rounded-xl hover:bg-slate-300 font-semibold text-sm">Hủy</button>
+                <button type="button" onclick="saveEditLesson()" class="px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 font-semibold text-sm">Lưu cập
                     nhật</button>
             </div>
         </div>
     </div>
 
     <!-- Modal Thêm Câu Hỏi Trắc Nghiệm -->
-    <div id="createQuizModal"
-        class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden p-4">
+    <div id="createQuizModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden p-4">
         <div class="bg-white w-full max-w-lg p-6 rounded-2xl shadow-xl space-y-3 max-h-[90vh] overflow-y-auto">
             <div class="flex justify-between items-center border-b pb-3">
                 <h3 class="text-lg font-bold text-slate-800">Thêm câu hỏi trắc nghiệm mới</h3>
-                <button type="button" onclick="closeCreateQuizModal()"
-                    class="text-slate-400 hover:text-slate-600 font-bold text-xl">&times;</button>
+                <button type="button" onclick="closeCreateQuizModal()" class="text-slate-400 hover:text-slate-600 font-bold text-xl">&times;</button>
             </div>
             <div class="space-y-3">
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-1">Nội dung câu hỏi</label>
-                    <textarea id="newQuestionText" rows="2"
-                        class="w-full px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
-                        placeholder="Nhập câu hỏi..."></textarea>
+                    <textarea id="newQuestionText" rows="2" class="w-full px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600" placeholder="Nhập câu hỏi..."></textarea>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                     <div>
                         <label class="block text-xs font-semibold text-slate-700 mb-1">Đáp án A</label>
-                        <input type="text" id="newOptA"
-                            class="w-full px-3 py-2 border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-purple-600"
-                            placeholder="Nội dung A">
+                        <input type="text" id="newOptA" class="w-full px-3 py-2 border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-purple-600" placeholder="Nội dung A">
                     </div>
                     <div>
                         <label class="block text-xs font-semibold text-slate-700 mb-1">Đáp án B</label>
-                        <input type="text" id="newOptB"
-                            class="w-full px-3 py-2 border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-purple-600"
-                            placeholder="Nội dung B">
+                        <input type="text" id="newOptB" class="w-full px-3 py-2 border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-purple-600" placeholder="Nội dung B">
                     </div>
                     <div>
                         <label class="block text-xs font-semibold text-slate-700 mb-1">Đáp án C</label>
-                        <input type="text" id="newOptC"
-                            class="w-full px-3 py-2 border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-purple-600"
-                            placeholder="Nội dung C">
+                        <input type="text" id="newOptC" class="w-full px-3 py-2 border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-purple-600" placeholder="Nội dung C">
                     </div>
                     <div>
                         <label class="block text-xs font-semibold text-slate-700 mb-1">Đáp án D</label>
-                        <input type="text" id="newOptD"
-                            class="w-full px-3 py-2 border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-purple-600"
-                            placeholder="Nội dung D">
+                        <input type="text" id="newOptD" class="w-full px-3 py-2 border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-purple-600" placeholder="Nội dung D">
                     </div>
                 </div>
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-1">Đáp án đúng (Chọn A, B, C hoặc
                         D)</label>
-                    <select id="newCorrectOpt"
-                        class="w-full px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600">
+                    <select id="newCorrectOpt" class="w-full px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600">
                         <option value="A">A</option>
                         <option value="B">B</option>
                         <option value="C">C</option>
@@ -3954,16 +3568,12 @@
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-1">Bài giải chi tiết (Hiện sau khi nộp
                         bài)</label>
-                    <textarea id="newExplanation" rows="3"
-                        class="w-full px-3 py-2 border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-purple-600"
-                        placeholder="Nhập các bước giải chi tiết..."></textarea>
+                    <textarea id="newExplanation" rows="3" class="w-full px-3 py-2 border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-purple-600" placeholder="Nhập các bước giải chi tiết..."></textarea>
                 </div>
             </div>
             <div class="flex justify-end gap-3 pt-3 border-t">
-                <button type="button" onclick="closeCreateQuizModal()"
-                    class="px-4 py-2 bg-slate-200 text-slate-700 rounded-xl hover:bg-slate-300 font-semibold text-sm">Hủy</button>
-                <button type="button" onclick="saveNewQuiz()"
-                    class="px-4 py-2 bg-purple-600 text-white rounded-xl hover:bg-purple-700 font-semibold text-sm">Lưu
+                <button type="button" onclick="closeCreateQuizModal()" class="px-4 py-2 bg-slate-200 text-slate-700 rounded-xl hover:bg-slate-300 font-semibold text-sm">Hủy</button>
+                <button type="button" onclick="saveNewQuiz()" class="px-4 py-2 bg-purple-600 text-white rounded-xl hover:bg-purple-700 font-semibold text-sm">Lưu
                     câu hỏi</button>
             </div>
         </div>
@@ -6557,7 +6167,7 @@
                     'gemini-3.1-flash-lite',
                     GEMINI_MODEL
                 ].filter(Boolean)));
-                
+
                 const recentContents = Array.isArray(contents) ? contents.slice(-6) : contents;
 
                 let data = null;
