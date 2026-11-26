@@ -6564,13 +6564,14 @@
                     ...aiChatHistory.slice(-8).map(m => ({ role: m.role === 'user' ? 'user' : 'model', parts: [{ text: m.content }] })),
                     { role: 'user', parts: [{ text: `[Môn học hiện tại: ${courseName}]\n${question}` }] }
                 ];
-
+// 1. Danh sách model dự phòng: tự đổi model nếu model chính quá tải
                 const fallbackModels = Array.from(new Set([
-                    GEMINI_MODEL,
                     'gemini-2.5-flash',
                     'gemini-2.5-flash-lite',
-                    'gemini-2.0-flash'
+                    GEMINI_MODEL
                 ].filter(Boolean)));
+
+                const recentContents = Array.isArray(contents) ? contents.slice(-6) : contents;
 
                 let data = null;
                 let lastError = null;
@@ -6580,16 +6581,35 @@
                         ? GEMINI_PROXY_URL
                         : `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${encodeURIComponent(apiKey)}`;
 
+                    const generationConfig = {
+                        temperature: 0.4,
+                        maxOutputTokens: 1200,
+                        ...(modelName.includes('2.5') ? { thinkingConfig: { thinkingBudget: 0 } } : {})
+                    };
+
+                    const baseBody = {
+                        systemInstruction: {
+                            parts: [{ text: AI_SCOPE_INSTRUCTION + '\nTrả lời ngắn gọn, đi thẳng vào từng bước giải chính, không dài dòng.' }]
+                        },
+                        contents: recentContents,
+                        generationConfig
+                    };
+
                     const payload = GEMINI_PROXY_URL
-                        ? { model: modelName, systemInstruction: { parts: [{ text: AI_SCOPE_INSTRUCTION }] }, contents: contents }
-                        : { systemInstruction: { parts: [{ text: AI_SCOPE_INSTRUCTION }] }, contents: contents };
+                        ? { model: modelName, ...baseBody }
+                        : baseBody;
+
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), 12000);
 
                     try {
                         const response = await fetch(endpoint, {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(payload)
+                            body: JSON.stringify(payload),
+                            signal: controller.signal
                         });
+                        clearTimeout(timeoutId);
 
                         const json = await response.json();
                         if (!response.ok) {
@@ -6599,9 +6619,11 @@
                         data = json;
                         break;
                     } catch (err) {
+                        clearTimeout(timeoutId);
                         lastError = err;
                         const msg = String(err?.message || '').toLowerCase();
                         const canRetry =
+                            err?.name === 'AbortError' ||
                             msg.includes('high demand') ||
                             msg.includes('overloaded') ||
                             msg.includes('unavailable') ||
@@ -6612,7 +6634,6 @@
                             msg.includes('not found');
 
                         if (!canRetry) throw err;
-                        await new Promise(resolve => setTimeout(resolve, 400));
                     }
                 }
 
