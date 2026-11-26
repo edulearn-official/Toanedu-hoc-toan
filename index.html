@@ -6456,19 +6456,8 @@
         }
 
         function setGeminiKey() {
-            const current = getGeminiKey();
-            const key = prompt("Nhập Gemini API Key tạm thời cho phiên học này (tự xóa khi đóng tab):", current);
-            if (key !== null) {
-                const trimmed = key.trim();
-                localStorage.removeItem('eduLearnGeminiKey');
-                if (trimmed) {
-                    sessionStorage.setItem('eduLearnGeminiKey', trimmed);
-                    showToast("✅ Đã lưu Gemini API Key cho phiên hiện tại!");
-                } else {
-                    sessionStorage.removeItem('eduLearnGeminiKey');
-                    showToast("🗑️ Đã xóa API Key.");
-                }
-            }
+            localStorage.removeItem('eduLearnGeminiKey');
+            sessionStorage.removeItem('eduLearnGeminiKey');
         }
 
         function toggleAIChat(forceOpen) {
