@@ -6565,18 +6565,58 @@
                     { role: 'user', parts: [{ text: `[Môn học hiện tại: ${courseName}]\n${question}` }] }
                 ];
 
-                const endpoint = GEMINI_PROXY_URL
-                    ? GEMINI_PROXY_URL
-                    : `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${encodeURIComponent(apiKey)}`;
+                const fallbackModels = Array.from(new Set([
+                    GEMINI_MODEL,
+                    'gemini-2.5-flash',
+                    'gemini-2.5-flash-lite',
+                    'gemini-2.0-flash'
+                ].filter(Boolean)));
 
-                const response = await fetch(endpoint, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ systemInstruction: { parts: [{ text: AI_SCOPE_INSTRUCTION }] }, contents: contents })
-                });
+                let data = null;
+                let lastError = null;
 
-                const data = await response.json();
-                if (!response.ok) throw new Error(data.error?.message || `Lỗi API (${response.status})`);
+                for (const modelName of fallbackModels) {
+                    const endpoint = GEMINI_PROXY_URL
+                        ? GEMINI_PROXY_URL
+                        : `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${encodeURIComponent(apiKey)}`;
+
+                    const payload = GEMINI_PROXY_URL
+                        ? { model: modelName, systemInstruction: { parts: [{ text: AI_SCOPE_INSTRUCTION }] }, contents: contents }
+                        : { systemInstruction: { parts: [{ text: AI_SCOPE_INSTRUCTION }] }, contents: contents };
+
+                    try {
+                        const response = await fetch(endpoint, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+
+                        const json = await response.json();
+                        if (!response.ok) {
+                            throw new Error(json.error?.message || `Lỗi API (${response.status})`);
+                        }
+
+                        data = json;
+                        break;
+                    } catch (err) {
+                        lastError = err;
+                        const msg = String(err?.message || '').toLowerCase();
+                        const canRetry =
+                            msg.includes('high demand') ||
+                            msg.includes('overloaded') ||
+                            msg.includes('unavailable') ||
+                            msg.includes('503') ||
+                            msg.includes('429') ||
+                            msg.includes('500') ||
+                            msg.includes('quota') ||
+                            msg.includes('not found');
+
+                        if (!canRetry) throw err;
+                        await new Promise(resolve => setTimeout(resolve, 400));
+                    }
+                }
+
+                if (!data) throw lastError || new Error('Hệ thống AI đang bận, em thử lại sau vài giây nhé.');
 
                 const reply = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || 'Thầy/cô chưa nhận được phản hồi, em thử hỏi lại nhé.';
                 pending?.parentElement?.remove();
