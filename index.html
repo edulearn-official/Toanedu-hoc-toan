@@ -6564,7 +6564,7 @@
                     ...aiChatHistory.slice(-8).map(m => ({ role: m.role === 'user' ? 'user' : 'model', parts: [{ text: m.content }] })),
                     { role: 'user', parts: [{ text: `[Môn học hiện tại: ${courseName}]\n${question}` }] }
                 ];
-// 1. Danh sách model dự phòng: tự đổi model nếu model chính quá tải
+                // 1. Danh sách model dự phòng: tự đổi model nếu model chính quá tải
                 const fallbackModels = Array.from(new Set([
                     'gemini-2.5-flash',
                     'gemini-2.5-flash-lite',
@@ -6600,7 +6600,7 @@
                         : baseBody;
 
                     const controller = new AbortController();
-                    const timeoutId = setTimeout(() => controller.abort(), 12000);
+                    const timeoutId = setTimeout(() => controller.abort('timeout'), 15000);
 
                     try {
                         const response = await fetch(endpoint, {
@@ -6620,10 +6620,14 @@
                         break;
                     } catch (err) {
                         clearTimeout(timeoutId);
-                        lastError = err;
+                        const isTimeout = err?.name === 'AbortError' || String(err?.message || '').toLowerCase().includes('aborted');
+                        lastError = isTimeout
+                            ? new Error('AI phản hồi chậm hơn dự kiến, vui lòng thử lại sau ít giây.')
+                            : err;
+
                         const msg = String(err?.message || '').toLowerCase();
                         const canRetry =
-                            err?.name === 'AbortError' ||
+                            isTimeout ||
                             msg.includes('high demand') ||
                             msg.includes('overloaded') ||
                             msg.includes('unavailable') ||
@@ -6637,6 +6641,7 @@
                     }
                 }
 
+                if (!data) throw lastError || new Error('Hệ thống AI đang bận, vui lòng thử lại sau vài giây.');
                 if (!data) throw lastError || new Error('Hệ thống AI đang bận, em thử lại sau vài giây nhé.');
 
                 const reply = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || 'Thầy/cô chưa nhận được phản hồi, em thử hỏi lại nhé.';
