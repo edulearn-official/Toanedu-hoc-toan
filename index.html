@@ -3037,7 +3037,7 @@
             </div>
             <div id="aiChatMessages" class="chat-scroll flex-1 overflow-y-auto p-3 space-y-2 bg-slate-50" aria-live="polite">
                 <div class="flex justify-start">
-                    <div class="chat-message text-left max-w-[96%] bg-white border border-slate-200 rounded-2xl rounded-tl-md px-4 py-3 text-sm leading-relaxed">Chào em! Thầy/cô có thể giúp em giải thích bài toán mở rộng hoặc hướng dẫn bấm máy Casio. Em cần hỏi gì nào?</div>
+                    <div class="chat-message text-left max-w-[100%] bg-white border border-slate-200 rounded-2xl rounded-tl-md px-4 py-3.5 text-sm leading-relaxed">Chào em! Thầy/cô có thể giúp em giải thích bài toán mở rộng hoặc hướng dẫn bấm máy Casio. Em cần hỏi gì nào?</div>
                 </div>
             </div>
             <form id="aiChatForm" class="p-2 border-t border-slate-200 bg-white" onsubmit="sendAIChatMessage(event)">
@@ -6113,7 +6113,7 @@
             const row = document.createElement('div');
             row.className = `flex ${sender === 'user' ? 'justify-end' : 'justify-start'}`;
             const bubble = document.createElement('div');
-            bubble.className = `chat-message max-w-[90%] rounded-2xl px-4 py-3 text-sm shadow-sm ${sender === 'user' ? 'bg-indigo-600 text-white rounded-tr-md' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-md'} ${isStatus ? 'italic text-slate-500' : ''}`;
+            bubble.className = `chat-message max-w-[100%] rounded-2xl px-4 py-3.5 text-sm shadow-sm ${sender === 'user' ? 'bg-indigo-600 text-white rounded-tr-md' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-md'} ${isStatus ? 'italic text-slate-500' : ''}`;
 
             if (sender === 'user' || isStatus) {
                 bubble.textContent = text;
