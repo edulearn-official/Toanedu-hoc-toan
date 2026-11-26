@@ -6564,10 +6564,10 @@
                     ...aiChatHistory.slice(-8).map(m => ({ role: m.role === 'user' ? 'user' : 'model', parts: [{ text: m.content }] })),
                     { role: 'user', parts: [{ text: `[Môn học hiện tại: ${courseName}]\n${question}` }] }
                 ];
-                // 1. Danh sách model dự phòng: tự đổi model nếu model chính quá tải
+                /// 1. Ưu tiên model mới nhất được Google khuyến nghị =====================================
                 const fallbackModels = Array.from(new Set([
-                    'gemini-2.5-flash',
-                    'gemini-2.5-flash-lite',
+                    'gemini-3.8-flash',
+                    'gemini-3.8-flash-lite',
                     GEMINI_MODEL
                 ].filter(Boolean)));
 
@@ -6581,10 +6581,11 @@
                         ? GEMINI_PROXY_URL
                         : `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${encodeURIComponent(apiKey)}`;
 
+                    /// 2. Tắt thinkingBudget để phản hồi nhanh dưới 10s ====================================
                     const generationConfig = {
                         temperature: 0.4,
                         maxOutputTokens: 1200,
-                        ...(modelName.includes('2.5') ? { thinkingConfig: { thinkingBudget: 0 } } : {})
+                        thinkingConfig: { thinkingBudget: 0 }
                     };
 
                     const baseBody = {
@@ -6631,6 +6632,8 @@
                             msg.includes('high demand') ||
                             msg.includes('overloaded') ||
                             msg.includes('unavailable') ||
+                            msg.includes('no longer available') ||
+                            msg.includes('deprecated') ||
                             msg.includes('503') ||
                             msg.includes('429') ||
                             msg.includes('500') ||
