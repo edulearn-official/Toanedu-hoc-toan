@@ -16,6 +16,22 @@
             color-scheme: light;
         }
 
+        /* Phóng to khung chat AI khi có class .is-expanded */
+        #aiChatPanel.is-expanded {
+            width: min(92vw, 860px) !important;
+            height: min(86vh, 780px) !important;
+            max-width: none !important;
+            max-height: none !important;
+            transition: width 0.2s ease, height 0.2s ease;
+        }
+
+        @media (max-width: 640px) {
+            #aiChatPanel.is-expanded {
+                width: 96vw !important;
+                height: 85vh !important;
+            }
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             background: #f6f6fc;
@@ -1621,6 +1637,10 @@
                             học</button>
                     </div>
                 </details>
+                <!-- Nút Thư viện đặt cùng cấp với các mục điều hướng chính -->
+                <button type="button" id="libraryNavBtn" onclick="toggleLibraryModal(true)" class="edu-nav-link">
+                    <i class="fa-solid fa-folder"></i><span>Thư viện</span>
+                </button>
             </nav>
 
             <div class="edu-header-actions">
@@ -3032,9 +3052,12 @@
                     </div>
                 </div>
                 <div class="flex items-center gap-1">
+                    <!-- Nút phóng to / thu nhỏ khung chat khi đọc bài giải dài -->
+                    <button type="button" id="aiChatExpandBtn" onclick="toggleAIChatExpand()" aria-label="Phóng to khung chat" title="Phóng to / Thu nhỏ" class="w-8 h-8 rounded-xl hover:bg-white/15 flex items-center justify-center"><i id="aiChatExpandIcon" class="fa-solid fa-expand text-sm"></i></button>
                     <button type="button" onclick="toggleAIChat(false)" aria-label="Đóng chat" class="w-8 h-8 rounded-xl hover:bg-white/15 flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button>
                 </div>
             </div>
+            <!-- Vùng hiển thị tin nhắn: giữ max-w-[100%] và text-left để đồng bộ với tin nhắn tạo động qua JS -->
             <div id="aiChatMessages" class="chat-scroll flex-1 overflow-y-auto p-3 space-y-2 bg-slate-50" aria-live="polite">
                 <div class="flex justify-start">
                     <div class="chat-message text-left max-w-[100%] bg-white border border-slate-200 rounded-2xl rounded-tl-md px-4 py-3.5 text-sm leading-relaxed">Chào em! Thầy/cô có thể giúp em giải thích bài toán mở rộng hoặc hướng dẫn bấm máy Casio. Em cần hỏi gì nào?</div>
@@ -3577,6 +3600,57 @@
                     câu hỏi</button>
             </div>
         </div>
+    </div>
+
+    <!-- MODAL THƯ VIỆN ĐỀ: Kho tài liệu dùng chung cho lớp học -->
+    <div id="libraryModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/50 backdrop-blur-[2px] p-4" role="dialog" aria-modal="true" aria-labelledby="libraryModalTitle">
+        <!-- Khung hộp thoại chính -->
+        <div class="w-full max-w-6xl rounded-3xl bg-white shadow-2xl overflow-hidden border border-slate-200">
+
+            <!-- Thanh tiêu đề màu cam nổi bật -->
+            <div class="bg-gradient-to-r from-amber-500 to-orange-500 text-white px-6 py-4 flex items-center justify-between">
+                <div class="flex items-center gap-3.5">
+                    <div class="w-11 h-11 rounded-2xl bg-white/20 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-folder-open"></i>
+                    </div>
+                    <div>
+                        <h2 id="libraryModalTitle" class="text-lg font-bold leading-tight">Thư viện đề</h2>
+                        <p class="text-xs sm:text-sm text-amber-50">Kho tài liệu dùng chung cho lớp học</p>
+                    </div>
+                </div>
+                <!-- Nút đóng modal thư viện -->
+                <button type="button" onclick="toggleLibraryModal(false)" aria-label="Đóng thư viện đề" class="w-9 h-9 rounded-xl hover:bg-white/15 flex items-center justify-center text-lg transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <!-- Hết thanh tiêu đề màu cam -->
+
+            <!-- Khu vực tải đề lên -->
+            <div class="px-6 py-5 border-b border-slate-200 flex flex-wrap items-center justify-between gap-4 bg-white">
+                <div>
+                    <h3 class="font-bold text-slate-800 text-base">Tài liệu và đề ôn tập</h3>
+                    <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Giáo viên đăng tài liệu; học sinh có thể xem và tải xuống.</p>
+                </div>
+                <div>
+                    <!-- Input ẩn chọn file đề/tài liệu, kích hoạt qua nút "Tải đề lên" -->
+                    <input type="file" id="libraryFileInput" accept=".pdf,.doc,.docx,.ppt,.pptx,.zip,.png,.jpg,.jpeg" class="hidden" onchange="handleLibraryUpload(event)">
+                    <button type="button" onclick="document.getElementById('libraryFileInput').click()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm shadow-sm transition">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <span>Tải đề lên</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Hết khu vực tải đề lên -->
+
+            <!-- Danh sách tài liệu hiển thị động qua renderLibraryList() -->
+            <div class="p-6 bg-slate-50/60 min-h-[420px] max-h-[82vh] overflow-y-auto">
+                <p id="libraryStatusText" class="text-sm text-slate-500 mb-4">0 tài liệu trong thư viện · Bạn đang ở quyền giáo viên</p>
+                <div id="libraryList" class="space-y-2.5"></div>
+            </div>
+            <!-- Hết danh sách tài liệu -->
+
+        </div>
+        <!-- Hết khung hộp thoại chính -->
     </div>
 
     <!-- =========================================================
@@ -6075,6 +6149,25 @@
             if (shouldOpen) setTimeout(() => document.getElementById('aiChatInput')?.focus(), 50);
         }
 
+        // Trạng thái phóng to/thu nhỏ của khung chat AI
+        let isAIChatExpanded = false;
+
+        function toggleAIChatExpand() {
+            const panel = document.getElementById('aiChatPanel');
+            const icon = document.getElementById('aiChatExpandIcon');
+            if (!panel) return;
+
+            // Bật/tắt class .is-expanded để đổi kích thước khung chat
+            isAIChatExpanded = !isAIChatExpanded;
+            panel.classList.toggle('is-expanded', isAIChatExpanded);
+
+            // Đổi icon giữa phóng to (fa-expand) và thu nhỏ (fa-compress)
+            if (icon) {
+                icon.classList.toggle('fa-expand', !isAIChatExpanded);
+                icon.classList.toggle('fa-compress', isAIChatExpanded);
+            }
+        }
+
         function formatAIChatText(rawText) {
             let text = String(rawText || '').replace(/\r\n/g, '\n');
 
@@ -6240,7 +6333,6 @@
                     }
                 }
 
-                if (!data) throw lastError || new Error('Hệ thống AI đang bận, vui lòng thử lại sau vài giây.');
                 if (!data) throw lastError || new Error('Hệ thống AI đang bận, em thử lại sau vài giây nhé.');
 
                 const reply = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || 'Thầy/cô chưa nhận được phản hồi, em thử hỏi lại nhé.';
@@ -8346,6 +8438,133 @@ Câu hỏi của học sinh: ${userQuestion}`
             }
             loadSprintQuestion(initialQ, `${formatViDate()} · khoảng 5 phút`);
         }
+        // Nhánh lưu danh sách tài liệu của "Thư viện đề" trên Firebase Realtime Database
+        const LIBRARY_DB_REF = 'libraryDocs';
+        const MAX_LIBRARY_FILE_BYTES = 2 * 1024 * 1024; // Giới hạn ~2MB/file để lưu mượt trên Realtime Database
+
+        let libraryItems = [];
+        let isLibraryListenerAttached = false;
+
+        // Lắng nghe dữ liệu từ Firebase theo thời gian thực
+        function initLibraryRealtimeListener() {
+            if (isLibraryListenerAttached || typeof db === 'undefined') return;
+            isLibraryListenerAttached = true;
+
+            db.ref(LIBRARY_DB_REF).on('value', (snapshot) => {
+                const raw = snapshot.val() || {};
+                libraryItems = Object.entries(raw).map(([key, val]) => ({
+                    id: key,
+                    ...val
+                }));
+
+                // Sắp xếp tài liệu mới nhất lên đầu
+                libraryItems.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+                renderLibraryList();
+            });
+        }
+
+        // Mở hoặc đóng modal Thư viện đề
+        function toggleLibraryModal(forceOpen) {
+            const modal = document.getElementById('libraryModal');
+            if (!modal) return;
+
+            initLibraryRealtimeListener();
+
+            const shouldOpen = typeof forceOpen === 'boolean' ? forceOpen : modal.classList.contains('hidden');
+            modal.classList.toggle('hidden', !shouldOpen);
+            modal.classList.toggle('flex', shouldOpen);
+
+            if (shouldOpen) {
+                renderLibraryList();
+            }
+        }
+
+        // Đọc file người dùng chọn và đẩy lên Firebase Realtime Database
+        function handleLibraryUpload(event) {
+            const file = event.target.files?.[0];
+            if (!file) return;
+
+            if (typeof db === 'undefined') {
+                alert('Chưa khởi tạo Firebase database (db).');
+                event.target.value = '';
+                return;
+            }
+
+            if (file.size > MAX_LIBRARY_FILE_BYTES) {
+                alert('File vượt quá 2MB. Vui lòng chọn file nhỏ hơn hoặc nén lại trước khi tải lên.');
+                event.target.value = '';
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = () => {
+                const newDoc = {
+                    name: file.name,
+                    sizeKB: Math.max(1, Math.round(file.size / 1024)),
+                    uploadedAt: new Date().toLocaleDateString('vi-VN'),
+                    createdAt: Date.now(),
+                    dataUrl: reader.result
+                };
+
+                db.ref(LIBRARY_DB_REF).push(newDoc)
+                    .catch((err) => {
+                        console.error('Lỗi tải tài liệu lên Firebase:', err);
+                        alert('Không tải được tài liệu lên thư viện. Kiểm tra lại quyền ghi của Firebase.');
+                    });
+            };
+
+            reader.readAsDataURL(file);
+            event.target.value = '';
+        }
+
+        // Xóa tài liệu khỏi thư viện trên Firebase
+        function deleteLibraryItem(itemId) {
+            if (!itemId || typeof db === 'undefined') return;
+            db.ref(`${LIBRARY_DB_REF}/${itemId}`).remove()
+                .catch((err) => {
+                    console.error('Lỗi xóa tài liệu:', err);
+                    alert('Không xóa được tài liệu này.');
+                });
+        }
+
+        // Hiển thị số lượng tài liệu và danh sách tải xuống/xóa
+        function renderLibraryList() {
+            const statusEl = document.getElementById('libraryStatusText');
+            const listEl = document.getElementById('libraryList');
+            if (!statusEl || !listEl) return;
+
+            statusEl.textContent = `${libraryItems.length} tài liệu trong thư viện · Bạn đang ở quyền giáo viên`;
+
+            if (libraryItems.length === 0) {
+                listEl.innerHTML = '';
+                return;
+            }
+
+            listEl.innerHTML = libraryItems.map(item => `
+        <div class="flex items-center justify-between gap-3 p-3.5 rounded-2xl bg-white border border-slate-200 shadow-sm">
+            <div class="flex items-center gap-3 min-w-0">
+                <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-file-lines"></i>
+                </div>
+                <div class="min-w-0">
+                    <p class="font-semibold text-sm text-slate-800 truncate">${item.name}</p>
+                    <p class="text-xs text-slate-500">${item.sizeKB} KB · Tải lên ${item.uploadedAt}</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+                <a href="${item.dataUrl}" download="${item.name}" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition">
+                    Tải xuống
+                </a>
+                <button type="button" onclick="deleteLibraryItem('${item.id}')" class="px-3 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-600 text-xs font-semibold transition">
+                    Xóa
+                </button>
+            </div>
+        </div>
+    `).join('');
+        }
+
+        // Gắn listener sớm khi trang tải xong để số lượng tài liệu luôn sẵn sàng
+        document.addEventListener('DOMContentLoaded', initLibraryRealtimeListener);
     </script>
 
 </body>
