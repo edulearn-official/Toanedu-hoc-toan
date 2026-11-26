@@ -12,10 +12,10 @@ export default async function handler(req, res) {
     const body = typeof req.body === "string" ? JSON.parse(req.body) : req.body || {};
     const { prompt, systemInstruction, contents, model, generationConfig } = body;
 
-    // Cho phép chọn model động từ frontend, mặc định dùng gemini-2.5-flash
+    // Cho phép chọn model động từ frontend, mặc định dùng gemini-3.8-flash
     const targetModel = typeof model === "string" && model.trim()
       ? model.trim()
-      : "gemini-2.5-flash";
+      : "gemini-3.8-flash";
 
     const finalContents = Array.isArray(contents)
       ? contents
