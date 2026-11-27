@@ -6304,7 +6304,9 @@
             list.scrollTop = list.scrollHeight;
             return bubble;
         }
-
+// =========================================================
+// [AI ASSISTANT]: XỬ LÝ GỬI TIN NHẮN & NHẬN PHẢN HỒI TỪ GEMINI
+// =========================================================
         async function sendAIChatMessage(event) {
             event?.preventDefault();
             const input = document.getElementById('aiChatInput');
@@ -6319,12 +6321,22 @@
             send.disabled = true;
             const pending = appendAIChatMessage('Đang phân tích bài toán...', 'assistant', true);
 
+            const getErrorMessage = (err) => {
+                if (!err) return 'Không xác định được nguyên nhân lỗi.';
+                if (typeof err === 'string') return err;
+                return err?.message || err?.error?.message || 'Lỗi kết nối không xác định.';
+            };
+
             try {
                 const courseName = coursesData[currentCourseKey]?.name || 'Toán THPT';
                 const contents = [
-                    ...aiChatHistory.slice(-8).map(m => ({ role: m.role === 'user' ? 'user' : 'model', parts: [{ text: m.content }] })),
+                    ...aiChatHistory.slice(-8).map(m => ({
+                        role: m.role === 'user' ? 'user' : 'model',
+                        parts: [{ text: m.content }]
+                    })),
                     { role: 'user', parts: [{ text: `[Môn học hiện tại: ${courseName}]\n${question}` }] }
                 ];
+
                 /// 1. Ưu tiên model mới nhất được Google khuyến nghị =====================================
                 const fallbackModels = Array.from(new Set([
                     'gemini-3.8-flash',
@@ -6373,21 +6385,25 @@
                         });
                         clearTimeout(timeoutId);
 
-                        const json = await response.json();
+                        const json = await response.json().catch(() => ({}));
                         if (!response.ok) {
-                            throw new Error(json.error?.message || `Lỗi API (${response.status})`);
+                            throw new Error(json?.error?.message || `Lỗi API (${response.status})`);
                         }
 
                         data = json;
                         break;
                     } catch (err) {
                         clearTimeout(timeoutId);
-                        const isTimeout = err?.name === 'AbortError' || String(err?.message || '').toLowerCase().includes('aborted');
+                        const isTimeout =
+                            err?.name === 'AbortError' ||
+                            String(err?.message || '').toLowerCase().includes('aborted') ||
+                            String(err || '').toLowerCase().includes('timeout');
+
                         lastError = isTimeout
                             ? new Error('AI phản hồi chậm hơn dự kiến, vui lòng thử lại sau ít giây.')
-                            : err;
+                            : new Error(getErrorMessage(err));
 
-                        const msg = String(err?.message || '').toLowerCase();
+                        const msg = getErrorMessage(err).toLowerCase();
                         const canRetry =
                             isTimeout ||
                             msg.includes('high demand') ||
@@ -6401,19 +6417,26 @@
                             msg.includes('quota') ||
                             msg.includes('not found');
 
-                        if (!canRetry) throw err;
+                        if (!canRetry) {
+                            throw lastError;
+                        }
                     }
                 }
 
-                if (!data) throw lastError || new Error('Hệ thống AI đang bận, em thử lại sau vài giây nhé.');
+                if (!data) {
+                    throw lastError || new Error('Hệ thống AI đang bận, em thử lại sau vài giây nhé.');
+                }
 
-                const reply = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || 'Thầy/cô chưa nhận được phản hồi, em thử hỏi lại nhé.';
+                const reply =
+                    data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() ||
+                    'Thầy/cô chưa nhận được phản hồi, em thử hỏi lại nhé.';
+
                 pending?.parentElement?.remove();
                 appendAIChatMessage(reply, 'assistant');
                 aiChatHistory.push({ role: 'user', content: question }, { role: 'assistant', content: reply });
             } catch (error) {
                 pending?.parentElement?.remove();
-                appendAIChatMessage(`❌ Lỗi kết nối AI: ${error.message}`, 'assistant');
+                appendAIChatMessage(`❌ Lỗi kết nối AI: ${getErrorMessage(error)}`, 'assistant');
             } finally {
                 send.disabled = false;
                 input?.focus();
